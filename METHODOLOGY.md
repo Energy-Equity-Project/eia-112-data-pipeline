@@ -20,7 +20,7 @@ The pipeline produces two cleaned datasets, run in order:
 | Stage | Script | Input | Output |
 |-------|--------|-------|--------|
 | 1 | `processors/01_eia-112-utility_processor.R` | Two raw EIA-112 utility workbooks (electric + gas) | `Cleaned_Data/eia/112/DD-MM-YYYY-eia-112-utility-shutoffs.csv` (monthly, long) |
-| 2 | `processors/02_eia-112-utility-annual_processor.R` | Stage 1 output + EIA-861 sales (ownership) | `Cleaned_Data/eia/112/DD-MM-YYYY-eia-112-utility-annual.csv` (annual, enriched) |
+| 2 | `processors/02_eia-112-utility-annual_processor.R` | Stage 1 output + EIA-861 sales (ownership) + EEP bad-data flags | `Cleaned_Data/eia/112/DD-MM-YYYY-eia-112-utility-annual.csv` (annual, enriched); `DD-MM-YYYY-eia-112-utility-bad-data.csv` (flagged rows only) |
 
 Stage 1 reshapes the raw workbooks into one analysis-ready row per **utility × fuel ×
 month**. Stage 2 collapses that to one row per **utility × fuel × year**, attaches an
@@ -99,6 +99,21 @@ reconnections; ~1.2M residential gas reconnections.
 - **Provenance:** Research conducted May 2026 against the 2024 EIA-112 annual data.
   The committed CSV is maintained by hand — extend it to add/revise assignments for
   future release years.
+
+### 2.4 EEP bad-data flags (manual review, Stage 2)
+
+- **Source:** `data/eia-112-manual-bad-data-flags.csv` — committed reference CSV
+  extracted from the "Bad or Missing Data" sheet of
+  `temp/29-05-2026-eia-112-utility-annual.xlsx`, column `"BAD  / MISSING DATA FLAG"`.
+- **Coverage:** 145 of 2,148 utility-year rows flagged as bad or incomplete reporting.
+  All 145 join cleanly to the annual output on `(state, utility_name, energy_type)`.
+- **Method:** EEP team reviewed the initial cleaned annual output and flagged rows where
+  reported data was missing, anomalous, or otherwise unreliable. The `flag_reason` column
+  is reserved for future annotation (currently blank).
+- **Effect:** Flagged rows are retained in the annual output (all metrics intact) but
+  excluded from the three `*_percentile` peer-ranking columns so bad reporting does not
+  distort benchmark comparisons. A companion `data_quality_note` column is derived
+  algorithmically for all rows to surface additional quality candidates.
 
 ---
 
@@ -193,6 +208,20 @@ needed.
    - `shutoff_rate = shutoffs / customer_count` — NA when `customer_count <= 0`
    - `reconnection_rate = reconnections / shutoffs` — NA when `shutoffs <= 0`
    - `final_notice_rate = final_notices / customer_count` — NA when `customer_count <= 0`
+
+4.5. **Bad-data flags and data quality notes** (`apply_bad_data_flags()`). After rates are
+   computed, the committed reference file `data/eia-112-manual-bad-data-flags.csv` (§2.4)
+   is joined on the exact key `(state, utility_name, energy_type)` to add `bad_data_flag`
+   (`"Y"` for 145 flagged rows; `NA` for the remaining ~2,003). Then `data_quality_note` is
+   derived algorithmically for all rows:
+   - `"customer_count missing"` — `customer_count` is NA
+   - `"all activity metrics zero"` — shutoffs, reconnections, and final_notices are all 0
+   - `"shutoff_rate exceeds 1 (shutoffs > customers)"` — shutoff_rate > 1
+   - `"final notices but zero shutoffs"` — final_notices > 0 and shutoffs == 0
+   - `NA` — no rule applies
+   Note: the note is descriptive only — it does not override the manual `bad_data_flag`.
+   A runtime anti-join warns if any flag key fails to match a row in the annual data.
+
 5. **Percentile rankings of `shutoff_rate`** via `dplyr::percent_rank()` — ascending, so a
    higher shutoff rate yields a higher percentile (0.82 ⇒ higher than 82% of the peer group);
    0–1 scale, matching the `*_rate` columns. Three peer groups:
@@ -200,12 +229,15 @@ needed.
    - `shutoff_rate_state_percentile` — within `(energy_type, state)`
    - `shutoff_rate_ownership_percentile` — within `(energy_type, ownership)`; NA-ownership
      utilities (mostly gas) form their own peer group and are ranked against each other.
-   NA-rate rows receive NA percentiles and are excluded from the denominator. Single-member
-   groups make `percent_rank()` return `NaN` (0/0); these are coerced to `NA` — a percentile
-   is meaningless without peers.
-6. **Column reorder** to the documented schema, then write.
+   Flagged rows (`bad_data_flag == "Y"`) are masked to `NA` before ranking so they are
+   excluded from the peer denominator — bad reporting does not distort benchmark comparisons.
+   NA-rate rows also receive NA percentiles and are excluded. Single-member groups make
+   `percent_rank()` return `NaN` (0/0); these are coerced to `NA` — a percentile is
+   meaningless without peers.
+6. **Column reorder** to the documented 19-column schema, then write the annual CSV and a
+   dedicated bad-data CSV (flagged rows only).
 
-### Stage 2 output schema (`DD-MM-YYYY-eia-112-utility-annual.csv`, 17 columns)
+### Stage 2 output schema (`DD-MM-YYYY-eia-112-utility-annual.csv`, 19 columns)
 
 | Column | Type | Description |
 |--------|------|-------------|
@@ -223,9 +255,11 @@ needed.
 | `shutoff_rate` | numeric | `shutoffs / customer_count`; NA when `customer_count <= 0` |
 | `reconnection_rate` | numeric | `reconnections / shutoffs`; NA when `shutoffs <= 0` |
 | `final_notice_rate` | numeric | `final_notices / customer_count`; NA when `customer_count <= 0` |
-| `shutoff_rate_national_percentile` | numeric | `percent_rank` within `energy_type`; 0–1; NA for NA rate or n=1 group |
-| `shutoff_rate_state_percentile` | numeric | `percent_rank` within `(energy_type, state)`; 0–1; NA for NA rate or n=1 group |
-| `shutoff_rate_ownership_percentile` | numeric | `percent_rank` within `(energy_type, ownership)`; 0–1; NA for NA rate or n=1 group |
+| `shutoff_rate_national_percentile` | numeric | `percent_rank` within `energy_type`; 0–1; NA for NA rate, n=1 group, or bad_data_flag = "Y" |
+| `shutoff_rate_state_percentile` | numeric | `percent_rank` within `(energy_type, state)`; 0–1; NA for NA rate, n=1 group, or bad_data_flag = "Y" |
+| `shutoff_rate_ownership_percentile` | numeric | `percent_rank` within `(energy_type, ownership)`; 0–1; NA for NA rate, n=1 group, or bad_data_flag = "Y" |
+| `bad_data_flag` | character | `"Y"` for 145 EEP-flagged rows (bad/incomplete reporting); `NA` otherwise |
+| `data_quality_note` | character | Algorithmically derived note for any row matching a quality rule (see §4.5); `NA` where no rule applies |
 
 Approximately 2,148 rows (utility × fuel combinations for 2024). Ownership coverage ~100%
 for both fuels after the EEP supplement.
@@ -238,11 +272,12 @@ for both fuels after the EEP supplement.
 
 ## 5. Output files & locations
 
-Both outputs are written to the shared `Cleaned_Data/eia/112/` directory (never committed to
+All outputs are written to the shared `Cleaned_Data/eia/112/` directory (never committed to
 this repo) with a `Sys.Date()` stamp in `DD-MM-YYYY` format:
 
 - `Cleaned_Data/eia/112/DD-MM-YYYY-eia-112-utility-shutoffs.csv` (Stage 1)
-- `Cleaned_Data/eia/112/DD-MM-YYYY-eia-112-utility-annual.csv` (Stage 2)
+- `Cleaned_Data/eia/112/DD-MM-YYYY-eia-112-utility-annual.csv` (Stage 2, all rows, 19 cols)
+- `Cleaned_Data/eia/112/DD-MM-YYYY-eia-112-utility-bad-data.csv` (Stage 2, flagged rows only, 19 cols)
 
 Schemas and per-dataset notes are mirrored in `Cleaned_Data/eia/112/CLEANED.md`.
 
@@ -277,7 +312,8 @@ Schemas and per-dataset notes are mirrored in `Cleaned_Data/eia/112/CLEANED.md`.
 
 **Requirements:** R (≥ 4.0) with `tidyverse` and `readxl`. Raw workbooks present in
 `Data/eia/112/`; a cleaned EIA-861 sales CSV present in `Cleaned_Data/eia/861/`;
-`data/eia-112-manual-ownership-overrides.csv` present in the repo (committed).
+`data/eia-112-manual-ownership-overrides.csv` and `data/eia-112-manual-bad-data-flags.csv`
+present in the repo (both committed).
 
 Run **from the repo root**, in order (Stage 2 auto-detects Stage 1's latest output):
 
@@ -294,13 +330,16 @@ Each script prints sanity output. Expected values for the 2024 data:
 | Stage 1 — gas utility-month rows / utilities | ~12,288 rows / ~897 utilities |
 | Stage 1 — CA electric month 6 spot-check | utility sum ≈ 33,017 + State Adjustment ≈ 586 |
 | Stage 2 — total rows | ~2,148 |
-| Stage 2 — columns | 17 |
+| Stage 2 — columns | 19 |
 | Stage 2 — rows per energy_type | ~1,226 electric / ~922 gas |
 | Stage 2 — ownership non-NA rate | ~100% both fuels (after EEP supplement) |
 | Stage 2 — ownership_source counts | ~1,160 `eia_861` / 988 `eep_determined` / ~0 `NA` |
 | Stage 2 — ownership (electric) order | Cooperative > Municipal > Investor Owned > Political Subdivision > State > Federal |
 | Stage 2 — rate NAs | `shutoff_rate` ~3, `reconnection_rate` ~77, `final_notice_rate` ~3 |
-| Stage 2 — national percentile range | min 0, max 1 for both fuels |
+| Stage 2 — bad_data_flag counts | 145 `"Y"` / 2003 `NA` |
+| Stage 2 — all bad-data flag keys matched | Console prints "All 145 bad-data flag keys matched successfully." |
+| Stage 2 — bad-data CSV rows | 145 rows (146 lines incl. header) |
+| Stage 2 — national percentile range | min 0, max 1 for both fuels (excludes flagged rows) |
 
 Re-running on a later date writes new `DD-MM-YYYY-*.csv` files alongside any existing ones;
 content is deterministic given identical inputs.

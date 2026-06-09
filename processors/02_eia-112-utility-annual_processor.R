@@ -40,6 +40,16 @@ apply_eep_ownership <- function(df, overrides_path) {
     select(-ownership_eep_determined)
 }
 
+# Apply EEP manual "bad / missing data" flags, keyed by (state, utility_name, energy_type).
+apply_bad_data_flags <- function(df, flags_path) {
+  flags <- read.csv(flags_path, stringsAsFactors = FALSE)
+  df %>%
+    left_join(flags, by = c("state", "utility_name", "energy_type")) %>%
+    mutate(bad_data_flag = case_when(bad_data_flag == "Y" ~ "Y",
+                                     TRUE ~ NA_character_)) %>%
+    select(-flag_reason)
+}
+
 # Normalize utility names for fuzzy joining:
 # lowercase → strip trailing state suffix → replace punctuation with space → collapse whitespace
 normalize_name <- function(x) {
@@ -136,21 +146,40 @@ utility_annual <- utility_annual %>%
   )
 
 # ---------------------------------------------------------------------------
+# Apply EEP bad-data flags and descriptive quality notes
+# ---------------------------------------------------------------------------
+
+bad_flags_path <- "data/eia-112-manual-bad-data-flags.csv"
+utility_annual <- apply_bad_data_flags(utility_annual, bad_flags_path)
+
+utility_annual <- utility_annual %>%
+  mutate(data_quality_note = case_when(
+    is.na(customer_count)                                    ~ "customer_count missing",
+    shutoffs == 0 & reconnections == 0 & final_notices == 0 ~ "all activity metrics zero",
+    shutoff_rate > 1                                         ~ "shutoff_rate exceeds 1 (shutoffs > customers)",
+    shutoffs == 0 & final_notices > 0                        ~ "final notices but zero shutoffs",
+    TRUE                                                     ~ NA_character_
+  ))
+
+# ---------------------------------------------------------------------------
 # Percentile rankings of shutoff_rate (ascending: higher rate = higher percentile)
+# Flagged rows are masked to NA so they are excluded from peer denominators.
 # ---------------------------------------------------------------------------
 
 utility_annual <- utility_annual %>%
+  mutate(rate_for_rank = if_else(is.na(bad_data_flag), shutoff_rate, NA_real_)) %>%
   group_by(energy_type) %>%
-  mutate(shutoff_rate_national_percentile = percent_rank(shutoff_rate)) %>%
+  mutate(shutoff_rate_national_percentile = percent_rank(rate_for_rank)) %>%
   ungroup() %>%
   group_by(energy_type, state) %>%
-  mutate(shutoff_rate_state_percentile = percent_rank(shutoff_rate)) %>%
+  mutate(shutoff_rate_state_percentile = percent_rank(rate_for_rank)) %>%
   ungroup() %>%
   group_by(energy_type, ownership) %>%       # NA ownership = its own group (intended)
-  mutate(shutoff_rate_ownership_percentile = percent_rank(shutoff_rate)) %>%
+  mutate(shutoff_rate_ownership_percentile = percent_rank(rate_for_rank)) %>%
   ungroup() %>%
   # percent_rank() returns NaN for single-member groups; NA is the honest value
-  mutate(across(ends_with("_percentile"), ~ if_else(is.nan(.), NA_real_, .)))
+  mutate(across(ends_with("_percentile"), ~ if_else(is.nan(.), NA_real_, .))) %>%
+  select(-rate_for_rank)
 
 # Reorder columns to match documented output schema
 utility_annual <- utility_annual %>%
@@ -161,7 +190,8 @@ utility_annual <- utility_annual %>%
     shutoff_rate, reconnection_rate, final_notice_rate,
     shutoff_rate_national_percentile,
     shutoff_rate_state_percentile,
-    shutoff_rate_ownership_percentile
+    shutoff_rate_ownership_percentile,
+    bad_data_flag, data_quality_note
   )
 
 # ---------------------------------------------------------------------------
@@ -219,6 +249,15 @@ if (nrow(unmatched) > 0) {
   cat("\nAll", nrow(overrides), "override keys matched successfully.\n")
 }
 
+bad_flags <- read.csv(bad_flags_path, stringsAsFactors = FALSE)
+unmatched_flags <- bad_flags %>%
+  anti_join(utility_annual, by = c("state", "utility_name", "energy_type"))
+if (nrow(unmatched_flags) > 0) {
+  warning(nrow(unmatched_flags), " bad-data flag row(s) did not match — possible name drift: ",
+          paste(head(unmatched_flags$utility_name, 5), collapse = ", "))
+} else cat("\nAll", nrow(bad_flags), "bad-data flag keys matched successfully.\n")
+print(table(utility_annual$bad_data_flag, useNA = "ifany"))   # expect 145 Y / 2003 NA
+
 cat("\nNA rate counts:\n")
 utility_annual %>%
   summarise(
@@ -239,3 +278,13 @@ utility_annual %>%
   ) %>%
   ungroup() %>%
   print()
+
+# ---------------------------------------------------------------------------
+# Write bad-data rows to a dedicated output CSV
+# ---------------------------------------------------------------------------
+
+bad_data_rows <- utility_annual %>% filter(bad_data_flag == "Y")
+bad_out_path  <- file.path(base_112,
+  paste0(format(Sys.Date(), "%d-%m-%Y"), "-eia-112-utility-bad-data.csv"))
+write.csv(bad_data_rows, bad_out_path, row.names = FALSE)
+message("Wrote: ", bad_out_path, " (", nrow(bad_data_rows), " flagged rows)")

@@ -1,0 +1,146 @@
+"state","utility_name","energy_type","bad_data_flag","flag_reason"
+"AL","Brookside Gas System - AL","gas","Y",NA
+"AL","Dora Gas BD - AL","gas","Y",NA
+"AL","Florala Gas Department - AL","gas","Y",NA
+"AL","Nw Alabama Gas Dist And Freebird Gas - AL","gas","Y",NA
+"AL","Rockford Town of - AL","gas","Y",NA
+"AL","Russellville Gas Board - AL","gas","Y",NA
+"CA","City Of Corona - (CA)","electric","Y",NA
+"CA","City Of Lodi - (CA)","electric","Y",NA
+"CA","City Of Vernon","electric","Y",NA
+"CA","Southern California Edison CO","gas","Y",NA
+"CO","Fort Morgan City of - CO","gas","Y",NA
+"FL","Beaches Energy Services","electric","Y",NA
+"FL","Havana Power & Light Company","electric","Y",NA
+"FL","Town of Jay - FL","gas","Y",NA
+"GA","Albany Utility Board","electric","Y",NA
+"GA","Albany Wtr Gas Lt Comm - GA","gas","Y",NA
+"GA","Colquitt Gas Sys City of - GA","gas","Y",NA
+"GA","Dublin City of - GA","gas","Y",NA
+"IA","Amana Society Service Co","electric","Y",NA
+"IA","Bedford City Natural Gas - IA","gas","Y",NA
+"IA","Brooklyn Municipal Utilities - IA","gas","Y",NA
+"IA","City Of Preston","electric","Y",NA
+"IA","City of Hartley - (IA)","electric","Y",NA
+"IA","City of Lake Park - (IA)","electric","Y",NA
+"IA","City of Orange City - (IA)","electric","Y",NA
+"IA","City of Preston","gas","Y",NA
+"IA","Coon Rapids Mun Util - IA","gas","Y",NA
+"IA","Everly Muncipal Utility - IA","gas","Y",NA
+"IA","Fairbank Municipal Gas - IA","gas","Y",NA
+"IA","Gilmore City Municipal Gas System - IA","gas","Y",NA
+"IA","Lake Park - IA","gas","Y",NA
+"IA","Lineville Mun Nat Gas System - IA","gas","Y",NA
+"IA","Manilla City of - IA","gas","Y",NA
+"IA","Mapleton City of - IA","gas","Y",NA
+"IA","Morning Sun Municipal Nat Gas Sys - IA","gas","Y",NA
+"IA","Orange City Municipal Utilities - IA","gas","Y",NA
+"IA","Remsen Municipal Utilities - IA","gas","Y",NA
+"IA","Town of Manilla - (IA)","electric","Y",NA
+"IA","Traer Municipal Utilities - IA","gas","Y",NA
+"IA","Wellman Gas System - IA","gas","Y",NA
+"ID","Salmon River Electric Coop Inc","electric","Y",NA
+"IL","Bethany Village of - IL","gas","Y",NA
+"IL","Chester City of - IL","gas","Y",NA
+"IL","City of Grand Tower - IL","gas","Y",NA
+"IL","Clay City Village of - IL","gas","Y",NA
+"IL","Geff Village of - IL","gas","Y",NA
+"IL","Louisville Village of - IL","gas","Y",NA
+"IL","Red Bud City of - IL","gas","Y",NA
+"IL","Village of Bethany - (IL)","electric","Y",NA
+"IL","Waverly Util Dept - IL","gas","Y",NA
+"IN","Bainbridge Municipal Gas Utility - IN","gas","Y",NA
+"IN","Chrisney Municipal Gas Dept - IN","gas","Y",NA
+"IN","Citizens Energy Group - IN","gas","Y",NA
+"IN","Community Natural Gas Co Inc - IN","gas","Y",NA
+"IN","Roachdale Municipal Gas Utility - IN","gas","Y",NA
+"IN","Switzerland County Natural Gas Co - IN","gas","Y",NA
+"KS","Cassoday City of - KS","gas","Y",NA
+"KS","City of Alma - (KS)","electric","Y",NA
+"KS","Little River City of - KS","gas","Y",NA
+"KS","Mcfarland City of - KS","gas","Y",NA
+"KS","Mclouth City Of","gas","Y",NA
+"KS","Sawyer City of - KS","gas","Y",NA
+"KS","Sharon City of - KS","gas","Y",NA
+"KS","Spearville City of - KS","gas","Y",NA
+"KS","Tri-County Electric Coop, Inc - (OK)","electric","Y",NA
+"KY","Ferguson City of - KY","gas","Y",NA
+"KY","Liberty Gas Co - KY","gas","Y",NA
+"KY","Sentra Resources - KY","gas","Y",NA
+"KY","Western Lewis Rectorville Gas Dist - KY","gas","Y",NA
+"LA","Baker City of - LA","gas","Y",NA
+"LA","Dequincy Gas Co - LA","gas","Y",NA
+"LA","Houma Municipal Gas System - LA","gas","Y",NA
+"LA","Jpc Energy Llc - LA","gas","Y",NA
+"LA","Logansport Town of - LA","gas","Y",NA
+"LA","Morganza Village of - LA","gas","Y",NA
+"LA","Provencal Village of - LA","gas","Y",NA
+"LA","Simmesport Town of - LA","gas","Y",NA
+"LA","Town of Boyce","electric","Y",NA
+"LA","Town of Boyce - LA","gas","Y",NA
+"MI","City of Bay City - (MI)","electric","Y",NA
+"MN","City of Lake Park - (MN)","electric","Y",NA
+"MN","City of Morgan - MN","gas","Y",NA
+"MN","City of Tyler - (MN)","electric","Y",NA
+"MN","Cohasset City of - MN","gas","Y",NA
+"MN","Hallock City of - MN","gas","Y",NA
+"MN","Lake Park Public Utilities - MN","gas","Y",NA
+"MN","Round Lake City of - MN","gas","Y",NA
+"MN","Tyler City of - MN","gas","Y",NA
+"MN","Warren City of - MN","gas","Y",NA
+"MO","City of Columbia - (MO)","electric","Y",NA
+"MO","City of Stanberry - (MO)","electric","Y",NA
+"MO","Evergy Metro","electric","Y",NA
+"MO","Mercer Municipal Natural Gas System - MO","gas","Y",NA
+"MO","Milan Municipal Natural Gas System - MO","gas","Y",NA
+"MO","Princeton Municipal Natural Gas Sys - MO","gas","Y",NA
+"MO","Stanberry City of - MO","gas","Y",NA
+"MS","Gloster Town of - MS","gas","Y",NA
+"MS","Walnut Grove Town of - MS","gas","Y",NA
+"MS","Waveland City of - MS","gas","Y",NA
+"ND","Slope Electric Coop Inc","electric","Y",NA
+"NE","Alma Nat Gas Co City of - NE","gas","Y",NA
+"NE","City of Lyons - (NE)","electric","Y",NA
+"NE","Lyons City of - NE","gas","Y",NA
+"NE","Ponca Public Utilities - NE","gas","Y",NA
+"NE","Scribner Municipal Gas - NE","gas","Y",NA
+"NE","Wahoo City of - NE","gas","Y",NA
+"NE","Wisner City of - NE","gas","Y",NA
+"NM","Deming Gas Sys - NM","gas","Y",NA
+"NM","Raton Natural Gas - NM","gas","Y",NA
+"NM","Rio Grande Electric Coop, Inc","electric","Y",NA
+"NY","Reserve Gas Company Inc - NY","gas","Y",NA
+"NY","Rochester Gas & Electric Corp","electric","Y",NA
+"NY","Rochester Gas And Elec Corp - NY","gas","Y",NA
+"OH","Ohio Valley Gas Corp - IN","gas","Y",NA
+"OK","Alfalfa Electric Coop, Inc","electric","Y",NA
+"OK","Arkansas Valley Elec Coop Corp","electric","Y",NA
+"OK","Chouteau Public Works Authority - OK","gas","Y",NA
+"OK","Hardesty Town of - OK","gas","Y",NA
+"OK","Jay Utilities Authority - OK","gas","Y",NA
+"OK","Wakita Utilities Authority - OK","gas","Y",NA
+"OK","Willow Town of - OK","gas","Y",NA
+"OR","Columbia Rural Elec Assn, Inc","electric","Y",NA
+"OR","Umpqua Indian Utility Cooperative","electric","Y",NA
+"PA","Sar Gas - PA","gas","Y",NA
+"RI","Block Island Utility District","electric","Y",NA
+"SD","Dakota Energy Coop Inc","electric","Y",NA
+"TN","Lenoir City Util BD - TN","gas","Y",NA
+"TN","Madisonville City of - TN","gas","Y",NA
+"TN","Martin City of - TN","gas","Y",NA
+"TN","Nashville Electric Service","electric","Y",NA
+"TN","Unicoi County Utility District - TN","gas","Y",NA
+"TX","Castroville City of - TX","gas","Y",NA
+"TX","City of Goldsmith - (TX)","electric","Y",NA
+"TX","City of Lubbock - (TX)","electric","Y",NA
+"TX","D & H Gas Co - TX","gas","Y",NA
+"TX","Goldsmith City of - TX","gas","Y",NA
+"TX","Whiteface City of - TX","gas","Y",NA
+"UT","Nephi City Gas - UT","gas","Y",NA
+"WI","Hustisford Utilities","electric","Y",NA
+"WI","Waterloo Light & Water Comm","electric","Y",NA
+"WV","Southern Public Service Co - WV","gas","Y",NA
+"WV","Standard Gas Co - WV","gas","Y",NA
+"WY","Fall River Rural Elec Coop Inc","electric","Y",NA
+"WY","High West Energy, Inc","electric","Y",NA
+"WY","Lower Valley Energy Inc","gas","Y",NA
