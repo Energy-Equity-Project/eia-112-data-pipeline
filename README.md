@@ -5,8 +5,10 @@ disconnection workbooks into analysis-ready CSVs. This repo is the single source
 for the utility-level EIA-112 cleaning behind the **2024 Residential Utility Disconnections
 Report**.
 
-It produces data — writing to the shared `Cleaned_Data/eia/112/` folder, never committing
-data locally.
+It produces data — writing each output to the shared `Cleaned_Data/eia/112/` folder (the
+single source of truth) and to a repo-local `outputs/` copy for convenient access. Both
+copies are gitignored; data is never committed here, and only the `Cleaned_Data/` copy is
+synced to S3.
 
 > Not in scope: the *state/national* EIA-112 report cleaning, which lives in
 > `eep-pipeline-core/processors/eia-112_processor.R` and consumes a different workbook.
@@ -26,6 +28,10 @@ Data/eia/112/*.xlsx
 - **Stage 2** aggregates to annual, joins EIA-861 ownership, and adds disconnection-intensity
   rates and national/state/ownership percentile rankings.
 
+Each stage writes every output CSV to **both** `Cleaned_Data/eia/112/` and the repo-local
+`outputs/` folder. Inputs are still resolved only from `Cleaned_Data/`, so the local copies
+never feed back into the pipeline.
+
 ## Repository structure
 
 ```
@@ -38,7 +44,7 @@ eia-112-data-pipeline/
 ├── processors/
 │   ├── 01_eia-112-utility_processor.R            # Stage 1: raw workbooks → monthly long
 │   └── 02_eia-112-utility-annual_processor.R     # Stage 2: monthly → annual + ownership + rates
-├── outputs/                                      # scratch (gitignored)
+├── outputs/                                      # repo-local copy of generated CSVs (gitignored)
 └── temp/                                         # scratch (gitignored)
 ```
 
@@ -77,7 +83,9 @@ and percentiles spanning 0–1.
 | `Cleaned_Data/eia/112/DD-MM-YYYY-eia-112-utility-shutoffs.csv` | 1 | ~27,000 | Monthly utility-level shutoffs (long: utility × fuel × month) |
 | `Cleaned_Data/eia/112/DD-MM-YYYY-eia-112-utility-annual.csv` | 2 | ~2,148 | Annual summary with ownership, rates, and peer percentiles |
 
-Output schemas are documented in both `METHODOLOGY.md` and `Cleaned_Data/eia/112/CLEANED.md`.
+Stage 2 also writes a `DD-MM-YYYY-eia-112-utility-bad-data.csv` (the 145 flagged rows).
+Each of these files is written to both `Cleaned_Data/eia/112/` and the repo-local `outputs/`
+folder. Output schemas are documented in both `METHODOLOGY.md` and `Cleaned_Data/eia/112/CLEANED.md`.
 
 ## Documentation
 
@@ -90,5 +98,5 @@ Output schemas are documented in both `METHODOLOGY.md` and `Cleaned_Data/eia/112
 ## Conventions
 
 R / tidyverse, snake_case, `%>%`, `write.csv`/`read.csv`, dated `DD-MM-YYYY-*.csv` outputs.
-Shared data lives only in `Data/` and `Cleaned_Data/` and is never committed here. Commit
-messages in present tense.
+Shared data lives in `Data/` and `Cleaned_Data/`; outputs are additionally mirrored to the
+gitignored `outputs/` folder, and data is never committed here. Commit messages in present tense.
