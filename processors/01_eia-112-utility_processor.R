@@ -29,9 +29,11 @@ library(readxl)
 
 # --- Paths ---
 raw_base    <- "../../../Data/eia/112"
-output_base <- "../../../Cleaned_Data/eia/112"
+# Outputs are written to both the shared Cleaned_Data store (single source of
+# truth) and the repo-local outputs/ folder (gitignored) for convenient access.
+output_bases <- c("../../../Cleaned_Data/eia/112", "outputs")
 
-dir.create(output_base, recursive = TRUE, showWarnings = FALSE)
+for (b in output_bases) dir.create(b, recursive = TRUE, showWarnings = FALSE)
 
 electric_file <- file.path(raw_base, "eia_112_electric_utility_level_data_2024.xlsx")
 gas_file      <- file.path(raw_base, "eia_112_natural_gas_utility_level_data_2024.xlsx")
@@ -103,14 +105,13 @@ combined <- combined %>%
   arrange(state, utility_name, energy_type, month)
 
 # --- Output ---
-output_file <- file.path(
-  output_base,
-  paste0(format(Sys.Date(), "%d-%m-%Y"), "-eia-112-utility-shutoffs.csv")
-)
+output_filename <- paste0(format(Sys.Date(), "%d-%m-%Y"), "-eia-112-utility-shutoffs.csv")
 
-write.csv(combined, output_file, row.names = FALSE)
-
-cat(sprintf("\nOutput written to: %s\n", output_file))
+for (b in output_bases) {
+  output_file <- file.path(b, output_filename)
+  write.csv(combined, output_file, row.names = FALSE)
+  cat(sprintf("\nOutput written to: %s\n", output_file))
+}
 
 # --- Sanity Checks ---
 cat(sprintf(

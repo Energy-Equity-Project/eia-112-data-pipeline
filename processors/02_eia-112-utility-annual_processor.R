@@ -69,6 +69,12 @@ normalize_name <- function(x) {
 base_112 <- "../../../Cleaned_Data/eia/112"
 base_861 <- "../../../Cleaned_Data/eia/861"
 
+# Outputs are written to both the shared Cleaned_Data store (single source of
+# truth) and the repo-local outputs/ folder (gitignored) for convenient access.
+# Inputs are still resolved from base_112 only.
+output_bases <- c(base_112, "outputs")
+for (b in output_bases) dir.create(b, recursive = TRUE, showWarnings = FALSE)
+
 utility_monthly_path <- resolve_latest_csv(base_112, "\\d{2}-\\d{2}-\\d{4}-eia-112-utility-shutoffs\\.csv")
 sales_861_path       <- resolve_latest_csv(base_861, "\\d{2}-\\d{2}-\\d{4}-eia-861-sales\\.csv")
 
@@ -199,10 +205,12 @@ utility_annual <- utility_annual %>%
 # ---------------------------------------------------------------------------
 
 out_filename <- paste0(format(Sys.Date(), "%d-%m-%Y"), "-eia-112-utility-annual.csv")
-out_path     <- file.path(base_112, out_filename)
 
-write.csv(utility_annual, out_path, row.names = FALSE)
-message("Wrote: ", out_path)
+for (b in output_bases) {
+  out_path <- file.path(b, out_filename)
+  write.csv(utility_annual, out_path, row.names = FALSE)
+  message("Wrote: ", out_path)
+}
 
 # ---------------------------------------------------------------------------
 # Sanity checks
@@ -284,7 +292,10 @@ utility_annual %>%
 # ---------------------------------------------------------------------------
 
 bad_data_rows <- utility_annual %>% filter(bad_data_flag == "Y")
-bad_out_path  <- file.path(base_112,
-  paste0(format(Sys.Date(), "%d-%m-%Y"), "-eia-112-utility-bad-data.csv"))
-write.csv(bad_data_rows, bad_out_path, row.names = FALSE)
-message("Wrote: ", bad_out_path, " (", nrow(bad_data_rows), " flagged rows)")
+bad_filename  <- paste0(format(Sys.Date(), "%d-%m-%Y"), "-eia-112-utility-bad-data.csv")
+
+for (b in output_bases) {
+  bad_out_path <- file.path(b, bad_filename)
+  write.csv(bad_data_rows, bad_out_path, row.names = FALSE)
+  message("Wrote: ", bad_out_path, " (", nrow(bad_data_rows), " flagged rows)")
+}
