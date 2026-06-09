@@ -74,7 +74,31 @@ reconnections; ~1.2M residential gas reconnections.
   and `ownership`, filtered to `year == 2024`.
 - **Coverage caveat:** EIA-861 is **electric service only**. It supplies ownership for
   ~89% of electric utilities but only ~7% of gas utilities (the gas matches are combined
-  electric+gas utilities such as Ameren that also appear in EIA-861).
+  electric+gas utilities such as Ameren that also appear in EIA-861). The remaining ~988
+  NA utilities are filled by the EEP-determined overrides (§2.3).
+
+### 2.3 EEP-determined ownership (manual review, Stage 2)
+
+- **Source:** `data/eia-112-manual-ownership-overrides.csv` — committed reference CSV
+  extracted from the "Assigning Ownership to NAs" sheet of
+  `temp/29-05-2026-eia-112-utility-annual.xlsx`.
+- **Coverage:** 988 utilities — exactly the post-861 NA set (134 electric + 854 gas).
+  Zero collisions with 861-matched utilities; 861 always takes precedence.
+- **Method:** EEP team manually researched each utility and assigned an ownership class.
+  The four classes used are all existing EIA-861 vocabulary:
+
+  | Class | Count |
+  |-------|-------|
+  | `Municipal` | 688 |
+  | `Investor Owned` | 224 |
+  | `Political Subdivision` | 43 |
+  | `Cooperative` | 33 |
+
+- **Parent annotation:** A `parent` column captures the parent company for ~136 utilities
+  (e.g., Sempra Energy for Southern California Gas Company and Oncor Electric Delivery).
+- **Provenance:** Research conducted May 2026 against the 2024 EIA-112 annual data.
+  The committed CSV is maintained by hand — extend it to add/revise assignments for
+  future release years.
 
 ---
 
@@ -148,6 +172,22 @@ needed.
    `ownership = NA`. The lookup is built distinct so no normalized `(state, name)` key maps to
    more than one ownership value (zero collisions). Expected match: **~89% electric / ~7% gas**
    (gas is low because EIA-861 is electric-only — this is expected, not a gap).
+
+3.5. **EEP-determined ownership fill** (`apply_eep_ownership()`). After the 861 join, 988
+   utilities still have `ownership = NA`. The committed reference file
+   `data/eia-112-manual-ownership-overrides.csv` (§2.3) is joined on the exact key
+   `(state, utility_name, energy_type)` — no name normalization needed because the override
+   keys were copied directly from the pipeline output strings. 861 takes precedence: the
+   coalesce only fills rows where `ownership` is still `NA` after step 3.
+   - `ownership_source` records provenance: `"eia_861"` for 861-matched utilities (~1,160),
+     `"eep_determined"` for EEP-filled utilities (988), and `NA` for any remaining gaps
+     (expected: ~0 after a successful override load).
+   - `parent` carries the EEP parent-company annotation for ~136 utilities.
+   - This step runs *before* percentile ranking (step 5) so EEP-classified utilities rank
+     within their true ownership peer group rather than in the NA catch-all group.
+   - A post-join anti-join warns at runtime if any override key fails to match a utility in
+     the annual data (guards against name drift in future release years).
+
 4. **Derived disconnection-intensity rates** (all guarded with `case_when` to return
    `NA_real_`, never `Inf`/`NaN`, on a zero denominator; all are fractions, not percentages):
    - `shutoff_rate = shutoffs / customer_count` — NA when `customer_count <= 0`
@@ -165,7 +205,7 @@ needed.
    is meaningless without peers.
 6. **Column reorder** to the documented schema, then write.
 
-### Stage 2 output schema (`DD-MM-YYYY-eia-112-utility-annual.csv`, 15 columns)
+### Stage 2 output schema (`DD-MM-YYYY-eia-112-utility-annual.csv`, 17 columns)
 
 | Column | Type | Description |
 |--------|------|-------------|
@@ -173,7 +213,9 @@ needed.
 | `utility_name` | character | EIA-reported utility name (as-is) |
 | `energy_type` | character | `"electric"` or `"gas"` |
 | `year` | integer | 2024 |
-| `ownership` | character | EIA-861 ownership class, or `NA` if unmatched |
+| `ownership` | character | EIA-861 ownership class, or EEP-determined where 861 found no match; `NA` only if both sources lack a classification |
+| `ownership_source` | character | `"eia_861"` / `"eep_determined"` / `NA` |
+| `parent` | character | EEP-identified parent company (~136 utilities); `NA` otherwise |
 | `customer_count` | numeric | 12-month mean residential customer count (rate denominator) |
 | `shutoffs` | numeric | Annual sum of disconnections |
 | `reconnections` | numeric | Annual sum of reconnections |
@@ -185,12 +227,12 @@ needed.
 | `shutoff_rate_state_percentile` | numeric | `percent_rank` within `(energy_type, state)`; 0–1; NA for NA rate or n=1 group |
 | `shutoff_rate_ownership_percentile` | numeric | `percent_rank` within `(energy_type, ownership)`; 0–1; NA for NA rate or n=1 group |
 
-Approximately 2,148 rows (utility × fuel combinations for 2024).
+Approximately 2,148 rows (utility × fuel combinations for 2024). Ownership coverage ~100%
+for both fuels after the EEP supplement.
 
-**Ownership values (EIA-861 2024):** `Investor Owned`, `Cooperative`, `Municipal`,
-`Political Subdivision`, `State`, `Federal`, `Community Choice Aggregator`,
-`Retail Power Marketer`, `Behind the Meter`, or `NA`. Electric utilities in 2024 are
-predominantly Cooperative and Municipal; gas utilities are almost entirely `NA`.
+**Ownership values:** `Investor Owned`, `Cooperative`, `Municipal`, `Political Subdivision`,
+`State`, `Federal`, `Community Choice Aggregator`, `Retail Power Marketer`,
+`Behind the Meter`. All values are standard EIA-861 vocabulary.
 
 ---
 
@@ -211,8 +253,11 @@ Schemas and per-dataset notes are mirrored in `Cleaned_Data/eia/112/CLEANED.md`.
 - **No Q/R flags at the utility level.** The state/national report workbook carries EIA
   quality flags (`Q` = response rate < 50%; `R` = RSE > 50%), but the utility-level
   workbooks do not, so Stage 1 performs no flag extraction.
-- **Gas ownership is mostly `NA` — by design.** EIA-861 covers electric service only; gas-only
-  utilities cannot match. `NA` is the honest representation, not a data-quality gap.
+- **Gas ownership is now supplied by EEP manual review.** EIA-861 covers electric service
+  only, so gas-only utilities do not match in step 3. Step 3.5 fills these via the committed
+  override CSV. The `ownership_source` flag distinguishes EEP-assigned values
+  (`"eep_determined"`) from 861-matched values (`"eia_861"`). EEP values are manual research
+  judgments — they carry no formal verification beyond the team's review.
 - **`customer_count` is a 12-month mean, not a sum.** It is a rate denominator. Utilities that
   joined or left service mid-year reflect averages over fewer than 12 active months.
 - **`State Adjustment` rows** are retained in the monthly output (non-integer, possibly
@@ -231,7 +276,8 @@ Schemas and per-dataset notes are mirrored in `Cleaned_Data/eia/112/CLEANED.md`.
 ## 7. Reproduction
 
 **Requirements:** R (≥ 4.0) with `tidyverse` and `readxl`. Raw workbooks present in
-`Data/eia/112/`; a cleaned EIA-861 sales CSV present in `Cleaned_Data/eia/861/`.
+`Data/eia/112/`; a cleaned EIA-861 sales CSV present in `Cleaned_Data/eia/861/`;
+`data/eia-112-manual-ownership-overrides.csv` present in the repo (committed).
 
 Run **from the repo root**, in order (Stage 2 auto-detects Stage 1's latest output):
 
@@ -248,8 +294,10 @@ Each script prints sanity output. Expected values for the 2024 data:
 | Stage 1 — gas utility-month rows / utilities | ~12,288 rows / ~897 utilities |
 | Stage 1 — CA electric month 6 spot-check | utility sum ≈ 33,017 + State Adjustment ≈ 586 |
 | Stage 2 — total rows | ~2,148 |
+| Stage 2 — columns | 17 |
 | Stage 2 — rows per energy_type | ~1,226 electric / ~922 gas |
-| Stage 2 — ownership non-NA rate | ~89% electric / ~7% gas |
+| Stage 2 — ownership non-NA rate | ~100% both fuels (after EEP supplement) |
+| Stage 2 — ownership_source counts | ~1,160 `eia_861` / 988 `eep_determined` / ~0 `NA` |
 | Stage 2 — ownership (electric) order | Cooperative > Municipal > Investor Owned > Political Subdivision > State > Federal |
 | Stage 2 — rate NAs | `shutoff_rate` ~3, `reconnection_rate` ~77, `final_notice_rate` ~3 |
 | Stage 2 — national percentile range | min 0, max 1 for both fuels |

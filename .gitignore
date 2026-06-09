@@ -20,6 +20,9 @@ temp/*
 # OS
 .DS_Store
 
+# Committed reference input (EEP-determined ownership) — exception to the *.csv rule
+!data/eia-112-manual-ownership-overrides.csv
+
 # Keep empty scratch dirs tracked
 !outputs/.gitkeep
 !temp/.gitkeep

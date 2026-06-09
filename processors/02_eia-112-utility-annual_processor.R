@@ -22,6 +22,24 @@ resolve_latest_csv <- function(dir, pattern) {
   files[which.max(dates)]
 }
 
+# Apply EEP-determined ownership to utilities EIA-861 could not classify.
+# EIA-861 takes precedence; EEP fills only where ownership is still NA. Records
+# provenance in ownership_source and carries the EEP parent-company annotation.
+apply_eep_ownership <- function(df, overrides_path) {
+  overrides <- read.csv(overrides_path, stringsAsFactors = FALSE)
+  df %>%
+    left_join(overrides, by = c("state", "utility_name", "energy_type")) %>%
+    mutate(
+      ownership_source = case_when(
+        !is.na(ownership)                ~ "eia_861",
+        !is.na(ownership_eep_determined) ~ "eep_determined",
+        TRUE                             ~ NA_character_
+      ),
+      ownership = coalesce(ownership, ownership_eep_determined)
+    ) %>%
+    select(-ownership_eep_determined)
+}
+
 # Normalize utility names for fuzzy joining:
 # lowercase → strip trailing state suffix → replace punctuation with space → collapse whitespace
 normalize_name <- function(x) {
@@ -91,6 +109,13 @@ utility_annual <- utility_annual %>%
   select(-norm_name)
 
 # ---------------------------------------------------------------------------
+# Fill ownership gaps with EEP-determined assignments
+# ---------------------------------------------------------------------------
+
+overrides_path <- "data/eia-112-manual-ownership-overrides.csv"
+utility_annual <- apply_eep_ownership(utility_annual, overrides_path)
+
+# ---------------------------------------------------------------------------
 # Derived disconnection-intensity rates (guarded against divide-by-zero)
 # ---------------------------------------------------------------------------
 
@@ -131,7 +156,7 @@ utility_annual <- utility_annual %>%
 utility_annual <- utility_annual %>%
   select(
     state, utility_name, energy_type, year,
-    ownership, customer_count,
+    ownership, ownership_source, parent, customer_count,
     shutoffs, reconnections, final_notices,
     shutoff_rate, reconnection_rate, final_notice_rate,
     shutoff_rate_national_percentile,
@@ -170,11 +195,29 @@ utility_annual %>%
   ungroup() %>%
   print()
 
+cat("\nOwnership source breakdown (expect ~1,160 eia_861 / ~988 eep_determined / ~0 NA):\n")
+utility_annual %>%
+  count(ownership_source, sort = TRUE) %>%
+  print()
+
 cat("\nOwnership values (electric only):\n")
 utility_annual %>%
   filter(energy_type == "electric", !is.na(ownership)) %>%
   count(ownership, sort = TRUE) %>%
   print()
+
+# Warn on any override key that didn't match a row in the annual data (guards against name drift)
+overrides <- read.csv(overrides_path, stringsAsFactors = FALSE)
+unmatched <- overrides %>%
+  anti_join(utility_annual, by = c("state", "utility_name", "energy_type"))
+if (nrow(unmatched) > 0) {
+  warning(
+    nrow(unmatched), " override row(s) did not match any utility in the annual data — ",
+    "possible name drift. Check: ", paste(unmatched$utility_name[1:min(5, nrow(unmatched))], collapse = ", ")
+  )
+} else {
+  cat("\nAll", nrow(overrides), "override keys matched successfully.\n")
+}
 
 cat("\nNA rate counts:\n")
 utility_annual %>%

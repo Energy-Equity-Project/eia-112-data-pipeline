@@ -1,0 +1,989 @@
+"state","utility_name","energy_type","ownership_eep_determined","parent"
+"CA","Southern California Gas Company","gas","Investor Owned","Sempra Energy"
+"TX","Oncor Electric Delivery Company LLC","electric","Investor Owned","Sempra Energy"
+"TX","Centerpoint Energy","electric","Investor Owned",NA
+"IL","Nicor Gas - IL","gas","Investor Owned","Southern Company"
+"TX","Atmos Energy Corporation - Co","gas","Investor Owned",NA
+"TX","Centerpoint Energy Entex - TX","gas","Investor Owned",NA
+"CO","Pub Service Co of Colorado - CO","gas","Investor Owned",NA
+"OH","Columbia Gas of Ohio - OH","gas","Investor Owned","NISource"
+"AZ","Southwest Gas Corporation - AZ","gas","Investor Owned",NA
+"NY","The Brooklyn Union Gas Co - NY","gas","Investor Owned","National Grid"
+"OH","East Ohio Gas Comp Dominion East Oh - OH","gas","Investor Owned","Enbridge"
+"MO","Spire Missouri Inc - MO","gas","Investor Owned",NA
+"UT","Questar Gas Company - ID","gas","Investor Owned","Enbridge"
+"MA","Boston Gas Co DBA National Grid - MA","gas","Investor Owned","National Grid"
+"MN","Centerpoint Energy - MN","gas","Investor Owned",NA
+"IL","Peoples Gas Light And Coke Company - IL","gas","Investor Owned","WEC Energy Group"
+"OK","Oklahoma Natural Gas Co - OK","gas","Investor Owned","One Gas Inc"
+"NV","Southwest Gas Corporation - AZ","gas","Investor Owned",NA
+"NC","Piedmont Natural Gas - NC","gas","Investor Owned","Duke Energy"
+"TX","Texas Gas Service - TX","gas","Investor Owned","One Gas Inc"
+"OR","Northwest Natural Gas Co - OR","gas","Investor Owned",NA
+"PA","Peoples Gas - WV","gas","Investor Owned","Essential Utilities"
+"NC","Public Svc Co of North Carolina - NC","gas","Investor Owned","Enbridge"
+"WI","Wisconsin Gas Company - WI","gas","Investor Owned","WEC Energy Group"
+"IN","Indiana Gas Company Inc - IN","gas","Investor Owned",NA
+"KS","Kansas Gas Service Company - KS","gas","Investor Owned","One Gas Inc"
+"CA","Sacramento Municipal Utility District","electric","Municipal",NA
+"NY","Niagara Mohawk DBA National Grid - NY","gas","Investor Owned","National Grid"
+"NJ","New Jersey Natural Gas - NJ","gas","Investor Owned","New Jersey Resources"
+"NY","Keyspan Energy DBA National Grid Ny - NY","gas","Investor Owned","National Grid"
+"VA","Washington Gas Light Company - DC","gas","Investor Owned","AltaGas"
+"NY","National Fuel Gas Dist Ny - NY","gas","Investor Owned",NA
+"NM","New Mexico Gas Company - NM","gas","Investor Owned","TXNM Energy, Inc."
+"PA","Peco Energy Company","gas","Investor Owned","Exelon"
+"PA","Philadelphia Gas Works - PA","gas","Municipal",NA
+"MD","Washington Gas Light Company - DC","gas","Investor Owned","AltaGas Ltd"
+"FL","Peoples Gas Sys - FL","gas","Investor Owned","Emera, Inc"
+"MN","Northern States Pwr Co - MN","gas","Investor Owned","Xcel"
+"OH","Duke Energy Ohio - OH","gas","Investor Owned","Duke"
+"PA","Columbia Gas of Maryland - MD","gas","Investor Owned","NiSource, Inc"
+"AL","Alabama Gas Corp - AL","gas","Investor Owned","Spire"
+"ID","Intermountian Gas Company - ID","gas","Investor Owned","MDU Resources Group, Inc"
+"NJ","South Jersey Gas Company - NJ","gas","Investor Owned","South Jersey Industries"
+"AR","Summit Utilities Arkansas Inc - AR","gas","Investor Owned",NA
+"LA","Atmos Energy Corporation - Co","gas","Investor Owned",NA
+"AL","Nw Alabama Gas Dist And Freebird Gas - AL","gas","Political Subdivision","Freebird is IOU under Emerald Storage Holdings LLC"
+"NY","New York State Elec And Gas Corp - NY","gas","Investor Owned","Avangrid / Iberdola"
+"OH","Vectren Energy Delivery of Ohio - OH","gas","Investor Owned","CenterPoint Energy"
+"MA","Eversource Gas Co of Ma - MA","gas","Investor Owned",NA
+"NJ","Pivotal Util Holdings Inc DBA Elizab - NJ","gas","Investor Owned","South Jersey Industries"
+"TN","Memphis Light Gas And Water - TN","gas","Municipal",NA
+"VA","Virginia Nat Gas Inc - VA","gas","Investor Owned","Southern Company"
+"AZ","Gila River Indian Utility Authority Gricua","electric","Political Subdivision",NA
+"MA","Nstar Gas Company - MA","gas","Investor Owned","Eversource"
+"MI","Semco Energy Gas Company - MI","gas","Investor Owned","Alta Gas, Ltd"
+"VA","Columbia Gas of Virginia - VA","gas","Investor Owned","NiSource, Inc"
+"RI","The Narragansett Elecco DBA Rienergy - RI","gas","Investor Owned","PPL Corporation"
+"TX","Texas-New Mexico Power Co","electric","Investor Owned","TXNM Energy, Inc."
+"MS","Atmos Energy Corporation - Co","gas","Investor Owned",NA
+"MN","Minnesota Energy Resources Corp - MN","gas","Investor Owned","WEC Energy Group"
+"CT","Yankee Gas Svc Co - CT","gas","Investor Owned","Eversource"
+"OK","Northeast Ok Pub Facilities Auth - OK","gas","Political Subdivision",NA
+"IA","Interstate Power And Light Company - IA","gas","Investor Owned","Alliant Energy"
+"CA","Southwest Gas Corporation - AZ","gas","Investor Owned","Southwest Gas Holdings, Inc."
+"WA","Cascade Nat Gas Corp - WA","gas","Investor Owned",NA
+"MA","Colonial Gas Co Co Keyspan","gas","Investor Owned","National Grid"
+"CO","Black Hills Energy - CO","gas","Investor Owned","Black Hills Corp"
+"PA","National Fuel Gas Dist Ny - NY","gas","Investor Owned",NA
+"NE","Black Hills Energy - NE","gas","Investor Owned","Black Hills Corp"
+"WV","Mountaineer Gas Co - WV","gas","Investor Owned","UGI Corporation"
+"WI","Wisconsin Power And Light Company - WI","gas","Investor Owned","Alliant Energy"
+"CT","Southern Connecticut Gas Company - CT","gas","Investor Owned","Avangrid / Iberdola"
+"CT","Connecticut Nat Gas Corp - CT","gas","Investor Owned","Avangrid / Iberdola"
+"MI","Michigan Gas Utilities Co - MI","gas","Investor Owned","WEC Energy Group"
+"AR","Black Hills Gas Distribution Llc - AR","gas","Investor Owned","Black Hills Corp"
+"TX","Coserv Gas Ltd - TX","gas","Cooperative","Denton County Electric Cooperative, Inc."
+"KY","Atmos Energy Corporation - Co","gas","Investor Owned",NA
+"MT","Northwestern Energy - MT","gas","Investor Owned","Black Hills Corp"
+"AZ","Uns Gas Inc - AZ","gas","Investor Owned","UNS Energy"
+"DC","Washington Gas Light Company - DC","gas","Investor Owned","AltaGas Ltd"
+"IL","North Shore Gas Company - IL","gas","Investor Owned","WEC Energy Group"
+"SC","Piedmont Natural Gas - SC","gas","Investor Owned","Duke Energy"
+"IA","Black Hills Energy - IA","gas","Investor Owned","Black Hills Corp"
+"TN","Atmos Energy Corporation - Co","gas","Investor Owned",NA
+"AK","Enstar Nat Gas - AK","gas","Investor Owned",NA
+"CA","Long Beach City of - CA","gas","Municipal",NA
+"NY","Orange & Rockland Utilities Inc - NY","gas","Investor Owned","ConEd"
+"KS","Atmos Energy Corporation - Co","gas","Investor Owned",NA
+"DE","Delmarva Power And Light Co - DE","gas","Investor Owned","Exelon"
+"KY","Columbia Gas Dist Co - KY","gas","Investor Owned","NiSource"
+"MS","Centerpoint Energy Entex - MS","gas","Investor Owned",NA
+"MO","Ameren Missouri - MO","gas","Investor Owned",NA
+"LA","Centerpoint Energy Arkla - LA","gas","Investor Owned","Entergy"
+"WV","Hope Gas Inc - WV","gas","Investor Owned",NA
+"CO","Atmos Energy Corporation - CO","gas","Investor Owned",NA
+"FL","Florida City Gas - FL","gas","Investor Owned","Chesapeake Utilities Corporation"
+"LA","Centerpoint Energy Entex - LA","gas","Investor Owned","Entergy"
+"KS","Black Hills Energy - KS","gas","Investor Owned","Black Hills Corp"
+"WI","Northern States Pwr Co - WI","gas","Investor Owned","Xcel"
+"ND","Montana Dakota Utilities Co - ND","gas","Investor Owned","MDU Resources Group, Inc"
+"WA","Northwest Natural Gas Co - OR","gas","Investor Owned",NA
+"OR","Avista Corp","gas","Investor Owned",NA
+"OK","Centerpoint Energy Arkla - OK","gas","Investor Owned",NA
+"NH","Liberty Utilities DBA Energy North N - NH","gas","Investor Owned",NA
+"MT","Montana Dakota Utilities Co - MT","gas","Investor Owned","MDU Resources Group, Inc"
+"AL","Spire Gulf Inc - AL","gas","Investor Owned",NA
+"MO","Springfield City Utils - MO","gas","Municipal",NA
+"OR","Cascade Nat Gas Corp - OR","gas","Investor Owned",NA
+"DE","Chesapeake Utilities Corporation - DE","gas","Investor Owned",NA
+"TX","Starr County Gas System - TX","gas","Political Subdivision",NA
+"GA","Austell Nat Gas Sys - GA","gas","Investor Owned",NA
+"FL","Sunrise City of - FL","gas","Municipal",NA
+"TX","Sienergy Lp - TX","gas","Investor Owned",NA
+"VA","Roanoke Gas Company - VA","gas","Investor Owned","RGC Resources"
+"TN","Chattanooga Gas Co - TN","gas","Investor Owned","Southern Company"
+"WY","Black Hills Energy - WY","gas","Investor Owned","Black Hills Corp"
+"SD","Montana Dakota Utilities Co - SD","gas","Investor Owned","MDU Resources Group, Inc"
+"AL","Huntsville Utilities Nat Gas Dept - AL","gas","Municipal",NA
+"GA","Central Georgia Electric Member Corp","electric","Cooperative",NA
+"TX","Corpus Christi Gas Div - TX","gas","Municipal",NA
+"ND","Northern States Pwr Co - ND","gas","Investor Owned","Xcel"
+"MA","Liberty Utilities Nengc Corp - MA","gas","Investor Owned",NA
+"TN","Crockett Public Utility Dist - TN","gas","Political Subdivision",NA
+"LA","Gas Util District 2 - LA","gas","Political Subdivision",NA
+"VT","Vermont Gas Systems Inc - VT","gas","Investor Owned","Énergir"
+"FL","Pensacola Energy - FL","gas","Municipal",NA
+"GA","Buford City of - GA","gas","Municipal",NA
+"NE","Northwestern Energy - MT","gas","Investor Owned","NorthWest Energy Group"
+"AR","Arkansas Oklahoma Gas Corporation - AR","gas","Investor Owned","Summit"
+"TX","Universal Natural Gas Inc - TX","gas","Investor Owned","Centric Infrastructure Group"
+"NM","Las Cruces Mun Gas - NM","gas","Municipal",NA
+"OH","National Gas And Oil Cooperative - OH","gas","Cooperative",NA
+"NM","Zia Natural Gas - NM","gas","Investor Owned","Natural Gas Processing, Inc."
+"MA","Berkshire Gas Company The - MA","gas","Investor Owned","Avangrid / Iberdola"
+"KY","Delta Natural Gas Company - KY","gas","Investor Owned","Essential Utilities, Inc"
+"FL","Tallahassee Municipal Gas System - FL","gas","Municipal",NA
+"HI","The Gas Company Llc - HI","gas","Investor Owned","Argo Infrastructure Partners"
+"TN","Jackson Energy Authority - TN","gas","Municipal",NA
+"FL","Clearwater Gas Sys - FL","gas","Municipal",NA
+"NH","Northern Utilities Inc - NH","gas","Investor Owned","Unitil"
+"MN","Duluth City of - MN","gas","Municipal",NA
+"TN","Clarksville Gas Dept - TN","gas","Municipal",NA
+"SC","Lancaster Cty Nat Gas Authority - SC","gas","Municipal",NA
+"MT","Energy West Montana Inc - MT","gas","Investor Owned","NorthWestern Energy"
+"AL","Dekalb Cherokee Counties - AL","gas","Political Subdivision",NA
+"TN","Gibson County Utility District - TN","gas","Political Subdivision",NA
+"MI","Tri-County Electric Coop Mi","electric","Cooperative",NA
+"FL","Utility Board Of The City Of Key West, FL","electric","Municipal",NA
+"IN","Ohio Valley Gas Corp - IN","gas","Investor Owned",NA
+"WY","Questar Gas Company - ID","gas","Investor Owned","Enbridge"
+"ME","Northern Utilities DBA Unitil Corp - ME","gas","Investor Owned","Unitil"
+"TX","West Texas Gas Inc - OK","gas","Investor Owned","Tailwater Capital"
+"CO","Colorado Natural Gas Inc - CO","gas","Investor Owned","Summit"
+"SC","Clinton Newberry Nat Gas Authority - SC","gas","Political Subdivision",NA
+"AL","Utilities Board of Trussville - AL","gas","Municipal",NA
+"VA","Charlottesville City of - VA","gas","Municipal",NA
+"GA","Tri-County Elec Member Corp Ga","electric","Cooperative",NA
+"FL","Leesburg City of - FL","gas","Municipal",NA
+"WI","Midwest Natural Gas Inc - WI","gas","Investor Owned",NA
+"MN","Great Plains Natural Gas Co - MN","gas","Investor Owned","MDU Resources Group"
+"VA","Atmos Energy Corporation - CO","gas","Investor Owned",NA
+"OH","Suburban Natural Gas Company - OH","gas","Investor Owned",NA
+"TX","Grey Forest Util - TX","gas","Municipal",NA
+"OH","Knox Energy Cooperative Association - OH","gas","Cooperative",NA
+"TN","Gallatin Natural Gas Systems - TN","gas","Municipal",NA
+"WY","Montana Dakota Utilities Co - WY","gas","Investor Owned","MDU Resources Group"
+"LA","South Coast Gas Co - LA","gas","Investor Owned",NA
+"OH","Pioneer Rural Elec Coop, Inc - - (OH)","electric","Cooperative",NA
+"AL","Marshall Cty Gas Dist - AL","gas","Municipal",NA
+"MI","Citizens Gas Fuel Co - MI","gas","Investor Owned","DTE"
+"MO","Summit Natural Gas - MO","gas","Investor Owned","Summit"
+"IN","Citizens Energy Group - IN","gas","Political Subdivision",NA
+"AL","Florence Natural Gas Dept City of - AL","gas","Municipal",NA
+"AL","East Central Alabama Gas District - AL","gas","Political Subdivision",NA
+"NC","Rocky Mount City of - NC","gas","Municipal",NA
+"MS","Chickasawhay Nat Gas - MS","gas","Political Subdivision",NA
+"NY","Liberty Utilities - NY","gas","Investor Owned","Algonquin Power & Utilities Corp"
+"GA","Tri-County Natural Gas Authority - GA","gas","Political Subdivision",NA
+"LA","Houma Municipal Gas System - LA","gas","Municipal",NA
+"OH","Lancaster Municipal Gas - OH","gas","Municipal",NA
+"FL","Lake Apopka Natural Gas District - FL","gas","Political Subdivision",NA
+"IL","Tri-County Electric Coop, Inc Il","electric","Cooperative",NA
+"NY","Corning Nat Gas Corp - NY","gas","Investor Owned","Argo Infrastructure Partners"
+"KY","Shelby Energy Co-Op, Inc","electric","Cooperative",NA
+"AL","Decatur Util Gas Dept - AL","gas","Municipal",NA
+"AL","Wilcox County Gas District - AL","gas","Political Subdivision",NA
+"MI","Presque Isle E And G Coop - MI","gas","Cooperative",NA
+"VA","Danville City of - VA","gas","Municipal",NA
+"IN","Midwest Natural Gas - IN","gas","Investor Owned",NA
+"IA","Cedar Falls Util - IA","gas","Municipal",NA
+"TX","Centerpoint Energy Arkla - TX","gas","Investor Owned","CenterPoint"
+"AR","Paragould Light & Water Comm","electric","Municipal",NA
+"TN","West Tennessee Public Utility Dist - TN","gas","Political Subdivision",NA
+"GA","Sugar Hill City of - GA","gas","Municipal",NA
+"SC","Fountain Inn Natural Gas - SC","gas","Municipal",NA
+"MD","Chesapeake Utilities Corporation - MD","gas","Investor Owned",NA
+"AL","Southeast Alabama Gas District - AL","gas","Political Subdivision",NA
+"OK","Tri-County Electric Coop, Inc Ok","electric","Cooperative",NA
+"WI","Superior Water Light And Power Co - WI","gas","Investor Owned","Allete"
+"GA","Cartersville Gas System - GA","gas","Municipal",NA
+"VT","Washington Electric Coop - (VT)","electric","Cooperative",NA
+"TN","Smyrna Nat Gas Sys - TN","gas","Municipal",NA
+"TN","Cookeville Gas Department - TN","gas","Municipal",NA
+"TN","Humphreys County Utilities Dist - TN","gas","Political Subdivision",NA
+"OK","Arkansas Oklahoma Gas Corporation - OK","gas","Investor Owned","Summit"
+"MA","Town of Wakefield - (MA)","electric","Municipal",NA
+"MD","Sandpiper Energy - MD","gas","Investor Owned","Chesapeake"
+"AL","Pickens County Natural Gas District - AL","gas","Political Subdivision",NA
+"MA","Holyoke City of - MA","gas","Municipal",NA
+"TN","Sevier Cty Util Dist - TN","gas","Municipal",NA
+"GA","Albany Wtr Gas Lt Comm - GA","gas","Municipal",NA
+"TN","Lebanon City of - TN","gas","Municipal",NA
+"MN","Greater Minnesota Gas Inc - MN","gas","Investor Owned","Greater Minnesota Synergy"
+"TN","Springfield Gas Sys - TN","gas","Municipal",NA
+"IA","Waukee Municipal Gas - IA","gas","Municipal",NA
+"OH","Consumers Gas Coop - OH","gas","Cooperative",NA
+"KY","Henderson Municipal Gas - KY","gas","Municipal",NA
+"IL","Illinois Gas Company - IL","gas","Investor Owned",NA
+"GA","Winder City of - GA","gas","Municipal",NA
+"WI","St Croix Valley Nat Gas Inc - WI","gas","Investor Owned","Piepgras Holding Company"
+"IN","Citizens Gas of Westfield - IN","gas","Municipal",NA
+"TN","Lexington Gas System - TN","gas","Municipal",NA
+"KY","Elizabethtown City of - KY","gas","Municipal",NA
+"AL","Fultondale Gas Board - AL","gas","Municipal",NA
+"GA","Lagrange City of - GA","gas","Municipal",NA
+"OH","Waterville Gas And Oil Co - OH","gas","Investor Owned",NA
+"AL","North Alabama Gas District - AL","gas","Political Subdivision",NA
+"KY","Murray City of - KY","gas","Municipal",NA
+"TN","Munford City of - TN","gas","Municipal",NA
+"TN","Greater Dickson Gas Authority - TN","gas","Political Subdivision",NA
+"TN","Claiborne Utilities District - TN","gas","Political Subdivision",NA
+"SC","Laurens Commission of Public Works - SC","gas","Municipal",NA
+"AZ","Graham County Electric Coop Inc","electric","Cooperative",NA
+"WV","Cardinal Bluefield Gas Co","gas","Investor Owned","Utility Pipeline, Ltd. (UPL"
+"IN","Community Natural Gas Co Inc - IN","gas","Investor Owned",NA
+"SC","Orangeburg Dept of Pub Util - SC","gas","Municipal",NA
+"WV","Union Oil And Gas Inc - WV","gas","Investor Owned",NA
+"NE","Metropolitan Utilities Dist of Omaha - NE","gas","Political Subdivision",NA
+"IN","Sycamore Gas Co - IN","gas","Investor Owned","Ullico Inc"
+"IN","Indiana Natural Gas Corp - IN","gas","Investor Owned","Midwest Natural Gas Corporation"
+"IA","Consumers Energy","electric","Cooperative",NA
+"SC","Chester Cty Nat Gas Auth - SC","gas","Municipal",NA
+"TN","Dyersburg Gas System - TN","gas","Municipal",NA
+"OH","Pike Natural Gas Co - OH","gas","Investor Owned","Utility Pipeline, Ltd. (UPL"
+"TN","Paris - KY","gas","Municipal",NA
+"TN","Lenoir City Util BD - TN","gas","Municipal",NA
+"TX","Epcor Gas Texas Inc - TX","gas","Investor Owned","NW Natural Holdings"
+"MN","New Ulm Pub Util Comm - MN","gas","Municipal",NA
+"MN","New Ulm Public Utilities Comm","electric","Municipal",NA
+"MN","Hibbing Public Utilities Comm","electric","Municipal",NA
+"PA","C T Enterprises  - PA","gas","Cooperative",NA
+"TN","Lawrenceburg Utility Systems - TN","gas","Municipal",NA
+"AL","Utilities Board Town of Citronelle - AL","gas","Municipal",NA
+"OH","Eastern Natural Gas - OH","gas","Investor Owned","Utility Pipeline, Ltd. (UPL"
+"WV","Southern Public Service Co - WV","gas","Investor Owned","Hope Gas"
+"MD","Elkton Gas Company - MD","gas","Investor Owned","Chesapeake"
+"IL","Morton Village of - IL","gas","Municipal",NA
+"LA","Madisonville Town of - LA","gas","Municipal",NA
+"LA","West Baton Rouge Parish Nat Gas - LA","gas","Municipal",NA
+"WY","Wyoming Gas Co - WY","gas","Investor Owned",NA
+"MS","Corinth City of Gas And Water - MS","gas","Municipal",NA
+"VA","Town of Bedford - (VA)","electric","Municipal",NA
+"TN","Fayetteville Public Utility Gas Dept - TN","gas","Municipal",NA
+"NM","Emw Gas Assn - NM","gas","Municipal",NA
+"KY","Benton Gas System - KY","gas","Municipal",NA
+"TN","Hardeman Fayette Util Dist - TN","gas","Political Subdivision",NA
+"SC","City of Union - (SC)","electric","Municipal",NA
+"TN","Athens Utilities Board - TN","gas","Municipal",NA
+"SC","Union City of - SC","gas","Municipal",NA
+"OH","City of Wapakoneta - (OH)","electric","Municipal",NA
+"SC","City of Laurens - (SC)","electric","Municipal",NA
+"NM","Deming Gas Sys - NM","gas","Investor Owned","NM Gas Company"
+"MA","Middleborough Gas & Electric Dept - MA","gas","Municipal",NA
+"SC","Fort Hill Nat Gas Auth - SC","gas","Political Subdivision",NA
+"GA","Fitzgerald Wtr Lgt & Bond Comm","electric","Municipal",NA
+"AL","Russellville Gas Board - AL","gas","Municipal",NA
+"TN","Savannah City of - TN","gas","Municipal",NA
+"NC","City of Kings Mountain - (NC)","electric","Municipal",NA
+"MI","Northern States Pwr Co - MI","gas","Investor Owned","Xcel"
+"AL","Sylacauga Utilities Board","electric","Municipal",NA
+"PA","Pike County Light And Power - PA","gas","Political Subdivision",NA
+"FL","Gulf Breeze City of - FL","gas","Municipal",NA
+"NE","City of Nebraska City - (NE)","electric","Municipal",NA
+"MN","Hibbing Pub Util Comm - MN","gas","Municipal",NA
+"GA","Toccoa Natural Gas System - GA","gas","Municipal",NA
+"TN","Portland City of - TN","gas","Municipal",NA
+"KY","Kentucky Frontier Gas Llc - KY","gas","Investor Owned",NA
+"OK","West Texas Gas Inc - OK","gas","Investor Owned","Tailwater Capital"
+"AZ","City of Safford - (AZ)","electric","Municipal",NA
+"WA","Enumclaw City of - WA","gas","Municipal",NA
+"AL","Sylacauga Utilities Board - AL","gas","Municipal",NA
+"KY","City of Bardstown - (KY)","electric","Municipal",NA
+"ME","Summit Natural Gas - ME","gas","Investor Owned","Summit"
+"IN","Boonville Nat Gas Corp - IN","gas","Municipal",NA
+"TN","Ripley City of - TN","gas","Municipal",NA
+"TX","Rockport City of - TX","gas","Municipal",NA
+"IL","Consumers Gas Co - IL","gas","Investor Owned",NA
+"LA","City of Plaquemine - (LA)","electric","Municipal",NA
+"SC","City of Newberry - (SC)","electric","Municipal",NA
+"PA","Knox Energy Coop Association Inc - PA","gas","Cooperative",NA
+"TN","Loudon Util Gas Dept - TN","gas","Municipal",NA
+"TN","Middle Tennessee Util Dist - TN","gas","Political Subdivision",NA
+"GA","Summerville Nat Gas Sys - GA","gas","Municipal",NA
+"TN","Bolivar City of - TN","gas","Municipal",NA
+"TN","Henderson City of - TN","gas","Municipal",NA
+"AL","South Alabama Gas - AL","gas","Investor Owned",NA
+"LA","Morgan City - (LA)","electric","Municipal",NA
+"CO","Fort Morgan City of - CO","gas","Municipal",NA
+"OH","Glenwood Energy of Oxford Inc - OH","gas","Investor Owned",NA
+"OK","Grove Mun Services Authority - OK","gas","Municipal",NA
+"AL","Scottsboro Wtr Sewer And Gas Board - AL","gas","Municipal",NA
+"NE","Midamerican Energy Co","gas","Investor Owned",NA
+"CO","City of Trinidad - (CO)","electric","Municipal",NA
+"MN","City of Virginia - (MN)","electric","Municipal",NA
+"OK","City of Pryor - (OK)","electric","Municipal",NA
+"NE","Nebraska City Utilities - NE","gas","Municipal",NA
+"FL","Palatka Gas Authority - FL","gas","Municipal",NA
+"NC","Kings Mountain City of - NC","gas","Municipal",NA
+"TN","Unicoi County Utility District - TN","gas","Municipal",NA
+"GA","Elberton Utilities  Nat Gas Div - GA","gas","Municipal",NA
+"TX","Tomball City of - TX","gas","Municipal",NA
+"LA","Pointe Coupee Parish Public Util - LA","gas","Municipal",NA
+"LA","East Baton Rouge Parish Gud 1 - LA","gas","Municipal",NA
+"LA","Iberville Parish Utility Department - LA","gas","Municipal",NA
+"NM","Las Vegas Nat Gas Dept City of - NM","gas","Municipal",NA
+"IN","Huntingburg City of - IN","gas","Municipal",NA
+"AL","Wheeler Basin Natural Gas Co - AL","gas","Investor Owned",NA
+"MS","Booneville Municipal Gas - MS","gas","Municipal",NA
+"CO","Trinidad City of - CO","gas","Municipal",NA
+"IN","Fountaintown Gas Co - IN","gas","Municipal",NA
+"IN","City of Huntingburg - (IN)","electric","Municipal",NA
+"GA","City of Elberton","electric","Municipal",NA
+"TN","Parsons City of - TN","gas","Municipal",NA
+"LA","Westlake Nat Gas Sys - LA","gas","Municipal",NA
+"OK","Fort Cobb Fuel Authority - OK","gas","Investor Owned","Navitas Assets, LLC"
+"MN","Perham City of - MN","gas","Municipal",NA
+"OK","Pryor Municipal Utility Board - OK","gas","Municipal",NA
+"TX","Greenlight Gas - TX","gas","Investor Owned",NA
+"TX","Perryton City of - TX","gas","Municipal",NA
+"AL","Boaz City of Gas BD - AL","gas","Municipal",NA
+"TN","Pulaski Natural Gas Dept - TN","gas","Municipal",NA
+"VA","Southwestern Virginia Gas Co - VA","gas","Investor Owned","C.T. Williams & Co"
+"FL","Havana Power & Light Company","electric","Municipal",NA
+"LA","Baker City of - LA","gas","Municipal",NA
+"AZ","Safford City of - AZ","gas","Municipal",NA
+"MO","Perryville City of - MO","gas","Municipal",NA
+"FL","St Joe Nat Gas Co - FL","gas","Municipal",NA
+"MN","Centennial Util DBA Circle Pines Uti - MN","gas","Municipal",NA
+"KY","Richmond Utilities Board - KY","gas","Municipal",NA
+"OK","Guymon Mun Gas Co - OK","gas","Municipal",NA
+"GA","Thomasville Utilities - GA","gas","Municipal",NA
+"TN","Humboldt Utils - TN","gas","Municipal",NA
+"UT","Nephi City Gas - UT","gas","Municipal",NA
+"LA","Evangeline Gas Co Inc - LA","gas","Investor Owned",NA
+"UT","Nephi City Corporation","electric","Municipal",NA
+"AL","Alexander City Mun Gas Co - AL","gas","Municipal",NA
+"FL","City of Starke - (FL)","electric","Municipal",NA
+"AL","Cullman Jefferson Gas - AL","gas","Political Subdivision",NA
+"AL","City of Robertsdale","electric","Municipal",NA
+"GA","City of Adel- (GA)","electric","Municipal",NA
+"TN","Covington City of - TN","gas","Municipal",NA
+"AL","Oneonta Util BD - AL","gas","Municipal",NA
+"CA","City of Susanville - CA","gas","Municipal",NA
+"IA","Harlan Municipal Utilities - (IA)","electric","Municipal",NA
+"TN","Rockwood Gas Systems - TN","gas","Municipal",NA
+"IN","Indiana Utilities Corporation - IN","gas","Investor Owned",NA
+"TN","Elk River Public Utility District - TN","gas","Political Subdivision",NA
+"TN","Lewisburg Gas Dept - TN","gas","Municipal",NA
+"OH","Madison Energy Cooperative Assoc Inc - OH","gas","Cooperative",NA
+"NM","Socorro City of - NM","gas","Municipal",NA
+"IN","Batesville Gas Utility - IN","gas","Municipal",NA
+"KY","Somerset Gas Svc - KY","gas","Municipal",NA
+"LA","Plaquemine City of - LA","gas","Municipal",NA
+"TN","Harriman Utility Board - TN","gas","Municipal",NA
+"IN","City of Rensselaer - (IN)","electric","Municipal",NA
+"SC","Bennettsville City of - SC","gas","Municipal",NA
+"LA","St James Parish Utilities - LA","gas","Municipal",NA
+"GA","Dublin City of - GA","gas","Municipal",NA
+"MO","City of Macon - (MO)","electric","Municipal",NA
+"SC","Town of Winnsboro - (SC)","electric","Municipal",NA
+"NM","Raton Natural Gas - NM","gas","Investor Owned",NA
+"IN","Rensselaer Gas Util Dept - IN","gas","Municipal",NA
+"TN","Jefferson Cocke Co Utility District - TN","gas","Political Subdivision",NA
+"AL","Calera City of - AL","gas","Municipal",NA
+"TN","Centerville Town of - TN","gas","Municipal",NA
+"KY","City of Vanceburg","electric","Municipal",NA
+"TN","Jamestown Gas System - TN","gas","Municipal",NA
+"IL","Salem City of - IL","gas","Municipal",NA
+"FL","Okaloosa Gas District - FL","gas","Political Subdivision",NA
+"IL","Fairfield City of - IL","gas","Municipal",NA
+"OH","Ohio Cumberland Gas Co - OH","gas","Investor Owned",NA
+"GA","City of Camilla","electric","Municipal",NA
+"KY","Carrollton City of - KY","gas","Municipal",NA
+"MO","City of Waynesville - (MO)","electric","Municipal",NA
+"GA","Fort Valley Utility Commission - GA","gas","Municipal",NA
+"TX","City of Brady - (TX)","electric","Municipal",NA
+"OK","Chelsea Gas Authority - OK","gas","Municipal",NA
+"AL","North Baldwin Utilities - AL","gas","Municipal",NA
+"SD","Oahe Electric Cooperative, Inc.","electric","Cooperative",NA
+"ID","Questar Gas Company - ID","gas","Investor Owned","Questar"
+"GA","Commerce City of - GA","gas","Municipal",NA
+"TN","Dunlap Nat Gas Sys - TN","gas","Municipal",NA
+"IA","Sioux Center Mun Gas - IA","gas","Municipal",NA
+"IA","Osage Mun Gas Util - IA","gas","Municipal",NA
+"IA","City of Osage - (IA)","electric","Municipal",NA
+"AL","Clarke Mobile Counties Gas District - AL","gas","Political Subdivision",NA
+"IL","City of Sullivan - (IL)","electric","Municipal",NA
+"MN","Northwest Gas of Cass County - MN","gas","Investor Owned","Gorhams', Inc"
+"IL","Anna City of - IL","gas","Municipal",NA
+"IL","Sullivan City of - IL","gas","Municipal",NA
+"IN","Linton City of - IN","gas","Municipal",NA
+"TN","Powell Clinch Utility District - TN","gas","Political Subdivision",NA
+"NE","City of Falls City - (NE)","electric","Municipal",NA
+"IL","Chester City of - IL","gas","Municipal",NA
+"AL","Moulton Gas Sys - AL","gas","Investor Owned","Joe Wheeler EMC"
+"AL","Fayette Gas Board - AL","gas","Municipal",NA
+"OH","Piedmont Gas Company - OH","gas","Investor Owned","Duke"
+"NE","City of Wahoo - (NE)","electric","Municipal",NA
+"IL","Pittsfield City of - IL","gas","Municipal",NA
+"GA","City of Lexington - NC","gas","Municipal",NA
+"GA","Perry City of - GA","gas","Municipal",NA
+"MO","Macon Municipal Utilities - MO","gas","Municipal",NA
+"TX","City of Alpine Gas Department - TX","gas","Municipal",NA
+"ND","Great Plains Natural Gas Co - MN","gas","Investor Owned","MDU Resources Group"
+"WY","Pinedale Natural Gas Inc - WY","gas","Municipal",NA
+"TX","Port Aransas City of - TX","gas","Municipal",NA
+"TN","Lafayette City of - TN","gas","Municipal",NA
+"AZ","Benson City of - AZ","gas","Municipal",NA
+"VA","Appalachian Natural Gas","gas","Investor Owned","Utility Pipeline, Ltd."
+"KY","Leitchfield Util - KY","gas","Municipal",NA
+"LA","Town of Vidalia - (LA)","electric","Municipal",NA
+"MN","City of Two Harbors- (MN)","electric","Municipal",NA
+"TN","Newbern Gas Dept - TN","gas","Municipal",NA
+"TX","Ldc Llc - TX","gas","Investor Owned",NA
+"TN","Adamsville City of - TN","gas","Municipal",NA
+"NY","C T Enterprises  - Pa","gas","Cooperative",NA
+"MN","Northwest Natural Gas Llc - MN","gas","Investor Owned","Northwest Natural Holding Company"
+"AL","City of Piedmont - (AL)","electric","Municipal",NA
+"TN","Martin City of - TN","gas","Municipal",NA
+"OH","Kng Energy Inc - OH","gas","Investor Owned","Utility Pipeline Ltd. (UPL)"
+"SC","Winnsboro Town of - SC","gas","Municipal",NA
+"LA","City of Kaplan - (LA)","electric","Municipal",NA
+"OH","Village Energy Coop Assoc Inc - OH","gas","Cooperative",NA
+"AL","Brewton City of - AL","gas","Municipal",NA
+"GA","Tifton Natural Gas System - GA","gas","Municipal",NA
+"KY","Hazard City Of","gas","Municipal",NA
+"LA","Donaldsonville City of - LA","gas","Municipal",NA
+"IL","City of Red Bud - (IL)","electric","Municipal",NA
+"FL","City of Williston - (FL)","electric","Municipal",NA
+"MS","Belmont Natural Gas Town of - MS","gas","Municipal",NA
+"IL","Aledo City of - IL","gas","Municipal",NA
+"TX","Rockin M Gas Llc - TX","gas","Investor Owned",NA
+"NE","Falls City City of - NE","gas","Municipal",NA
+"GA","Hartwell City of - GA","gas","Municipal",NA
+"IA","Lyon Rural Electric Coop","electric","Cooperative",NA
+"FL","Lake City City of - FL","gas","Municipal",NA
+"GA","Statesboro City of - GA","gas","Municipal",NA
+"CA","Alpine Natural Gas Inc - CA","gas","Investor Owned","NV Energy, Inc."
+"LA","Livingston Gas & Utility Co - LA","gas","Investor Owned",NA
+"IL","Village of Riverton - (IL)","electric","Municipal",NA
+"TN","Marion Natural Gas System - TN","gas","Municipal",NA
+"GA","Fitzgerald City of - GA","gas","Municipal",NA
+"OH","Arlington Nat Gas Co - OH","gas","Investor Owned",NA
+"OK","City of Cleveland - OK","gas","Municipal",NA
+"IA","Calhoun County Elec Coop Assn","electric","Cooperative",NA
+"MO","City of Cuba - (MO)","electric","Municipal",NA
+"TN","Livingston Town of - TN","gas","Municipal",NA
+"MN","Two Harbors City of - MN","gas","Municipal",NA
+"TN","Sweetwater Utilities Board - TN","gas","Municipal",NA
+"TX","Sealy City of - TX","gas","Municipal",NA
+"MN","Dooleys Natural Gas - MN","gas","Investor Owned",NA
+"KS","Louisburg City of - KS","gas","Municipal",NA
+"TX","Uvalde Gas System - TX","gas","Municipal",NA
+"TN","Selmer Public Works - TN","gas","Municipal",NA
+"WI","Florence Utility Commission - WI","gas","Municipal",NA
+"AR","Harrisburg Wtr Gas Div - AR","gas","Municipal",NA
+"KS","Garnett City of - KS","gas","Municipal",NA
+"KS","City of Neodesha - (KS)","electric","Municipal",NA
+"TN","Linden Town of - TN","gas","Municipal",NA
+"TX","City of Brady - TX","gas","Municipal",NA
+"AL","Jacksonville - AL","gas","Municipal",NA
+"TX","Woodville City of - TX","gas","Municipal",NA
+"IL","Red Bud City of - IL","gas","Municipal",NA
+"LA","Vidalia City of - LA","gas","Municipal",NA
+"IL","Westville Gas Commission - IL","gas","Municipal",NA
+"KY","Paintsville Gas Sys - KY","gas","Municipal",NA
+"NE","City of Central City","electric","Municipal",NA
+"NE","Wahoo City of - NE","gas","Municipal",NA
+"GA","Adairsville Nat Gas Sys - GA","gas","Municipal",NA
+"LA","St Amant Gas Co - LA","gas","Investor Owned",NA
+"OK","Hulbert Pub Wks Auth - OK","gas","Municipal",NA
+"IL","Pinckneyville City of - IL","gas","Municipal",NA
+"KS","City of Osage City - (KS)","electric","Municipal",NA
+"KS","Osage City Natural Gas - KS","gas","Municipal",NA
+"GA","Social Circle City of - GA","gas","Municipal",NA
+"SC","Bamberg Board of Public Works","electric","Municipal",NA
+"TX","Chireno City of - TX","gas","Municipal",NA
+"KY","Natural Energy Util Corp - KY","gas","Investor Owned",NA
+"IL","Nashville City of - IL","gas","Municipal",NA
+"TN","Citizens Gas Util District - TN","gas","Political Subdivision",NA
+"LA","Kaplan City of - LA","gas","Municipal",NA
+"TX","Spearman City of - TX","gas","Municipal",NA
+"KS","Lyons City of - KS","gas","Municipal",NA
+"KY","Morganfield City of - KY","gas","Municipal",NA
+"MO","City of Monroe City - (MO)","electric","Municipal",NA
+"AL","Piedmont Water Gas And Sewer Board - AL","gas","Municipal",NA
+"LA","Patterson City of - LA","gas","Municipal",NA
+"LA","Pierre Part Nat Gas - LA","gas","Municipal",NA
+"AL","Red Bay Water And Gas - AL","gas","Municipal",NA
+"IA","Emmetsburg Municipal Utilities - IA","gas","Municipal",NA
+"MN","Community Coops of Lake Park - MN","gas","Cooperative",NA
+"MN","N W Natural Gas of Murray Cty - MN","gas","Investor Owned",NA
+"IL","City of Bushnell - (IL)","electric","Municipal",NA
+"IL","Mcleansboro City of - IL","gas","Municipal",NA
+"TN","Mt Pleasant Gas Sys - TN","gas","Municipal",NA
+"IL","City of McLeansboro - (IL)","electric","Municipal",NA
+"FL","Crescent City Nat Gas - FL","gas","Municipal",NA
+"AL","Childersburg Wtr Swr Gas - AL","gas","Municipal",NA
+"MN","Cohasset City of - MN","gas","Municipal",NA
+"TN","Oak Ridge Util District - TN","gas","Political Subdivision",NA
+"TX","City of Castroville - (TX)","electric","Municipal",NA
+"IA","Tipton City of - IA","gas","Municipal",NA
+"CA","West Coast Gas Co Inc - CA","gas","Investor Owned","NV Energy Inc / Berkshire Hathaway Energy"
+"KY","Lewisport City of - KY","gas","Municipal",NA
+"KS","Hesston City of - KS","gas","Municipal",NA
+"IA","Rock Rapids - IA","gas","Municipal",NA
+"IL","Bushnell City of - IL","gas","Municipal",NA
+"GA","Trion Town of - GA","gas","Municipal",NA
+"FL","Perry City of - FL","gas","Municipal",NA
+"TN","Lake County Utility District - TN","gas","Political Subdivision",NA
+"PA","Keystone Cooperative Association Inc - PA","gas","Cooperative",NA
+"OH","Sheldon Gas Co - OH","gas","Investor Owned",NA
+"NY","Fillmore Gas Co - NY","gas","Investor Owned",NA
+"LA","Dequincy Gas Co - LA","gas","Municipal",NA
+"IA","Rock Rapids Municipal Utility - (IA)","electric","Municipal",NA
+"KY","City of Providence - (KY)","electric","Municipal",NA
+"IN","Switzerland County Natural Gas Co - IN","gas","Political Subdivision",NA
+"KY","City of Columbia Gas Department - KY","gas","Municipal",NA
+"OK","City of Mannford - OK","gas","Municipal",NA
+"IA","Cascade Mun Util - IA","electric","Municipal",NA
+"TN","Madisonville City of - TN","gas","Municipal",NA
+"MT","Shelby Gas Association - MT","gas","Cooperative",NA
+"OK","Town of Mannford - (OK)","electric","Municipal",NA
+"AZ","Willcox City of - AZ","gas","Municipal",NA
+"IA","City of Bloomfield - (IA)","electric","Municipal",NA
+"IA","Cascade Mun Util - IA","gas","Municipal",NA
+"MO","Plattsburg City of - MO","gas","Municipal",NA
+"IA","City of Traer - (IA)","electric","Municipal",NA
+"MO","Monroe City Gas Dept","gas","Municipal",NA
+"IL","Dupo Village of - IL","gas","Municipal",NA
+"MN","Lake Region Energy Services - MN","gas","Cooperative",NA
+"TX","Denver City Gas System - TX","gas","Municipal",NA
+"KS","Neodesha City of - KS","gas","Municipal",NA
+"KY","Morehead Utility Plant Board","gas","Municipal",NA
+"FL","City of Chattahoochee - (FL)","electric","Municipal",NA
+"KS","City of Moundridge - (KS)","electric","Municipal",NA
+"GA","Monticello City of - GA","gas","Municipal",NA
+"NE","Central City Gas Dept - NE","gas","Municipal",NA
+"NE","City of Superior - (NE)","electric","Municipal",NA
+"TX","Natgas  Inc - TX","gas","Investor Owned",NA
+"IL","Village of Pawnee - IL","gas","Municipal",NA
+"ND","Dakota Natural Gas Llc - ND","gas","Investor Owned","Greater Minnesota Gas, Inc."
+"IA","Sac City Municipal Gas Co - IA","gas","Municipal",NA
+"IA","City of Hawarden - (IA)","electric","Municipal",NA
+"TX","Gary Natural Gas System - TX","gas","Municipal",NA
+"TN","First Utility District Tipton - TN","gas","Political Subdivision",NA
+"CO","Rangely Town of - CO","gas","Municipal",NA
+"GA","Douglas Gas Sys - GA","gas","Investor Owned",NA
+"MN","Hawley City of - MN","gas","Municipal",NA
+"KY","Morgantown City of - KY","gas","Municipal",NA
+"AK","Barrow Utils & Elec Coop, Inc","electric","Cooperative",NA
+"TX","Huxley City of - TX","gas","Municipal",NA
+"AL","Mulga Nat Gas System - AL","gas","Municipal",NA
+"NM","Eastern New Mexico Nat Gas - NM","gas","Investor Owned","Emera"
+"LA","Abita Springs Natural Gas Co - LA","gas","Municipal",NA
+"TX","Reklaw Nat Gas Sys - TX","gas","Municipal",NA
+"KY","Pikeville City of - KY","gas","Municipal",NA
+"NC","Bessemer City of - NC","gas","Municipal",NA
+"FL","City of Blountstown - (FL)","electric","Municipal",NA
+"MS","Bay St Louis City of - MS","gas","Municipal",NA
+"AL","Geneva Cty Gas Dist - AL","gas","Municipal",NA
+"LA","Livingston Parish Gud 1 - LA","gas","Municipal",NA
+"KY","Tompkinsville City of - KY","gas","Municipal",NA
+"TX","Sweeny City of - TX","gas","Municipal",NA
+"KY","Scottsville Gas Co - KY","gas","Investor Owned",NA
+"SC","Bamberg BD of Pub Works - SC","gas","Municipal",NA
+"IA","City of Lamoni - (IA)","electric","Municipal",NA
+"KY","Providence City of - KY","gas","Municipal",NA
+"LA","Moreauville Village of - LA","gas","Municipal",NA
+"WA","PUD 1 of Snohomish County","electric","Political Subdivision",NA
+"IN","Jasonville City of - IN","gas","Municipal",NA
+"IA","Hawarden Municipal Utilities - IA","gas","Municipal",NA
+"IA","City of Remsen - (IA)","electric","Municipal",NA
+"AL","West Escambia Utilities Inc - AL","gas","Municipal",NA
+"NE","Superior City of - NE","gas","Municipal",NA
+"KY","Prestonburg City Utilities Comm - KY","gas","Municipal",NA
+"TX","Onalaska Water And Gas Supply Corp - TX","gas","Cooperative",NA
+"IL","White Hall City of - IL","gas","Municipal",NA
+"SD","Crooks Municipal Gas - SD","gas","Municipal",NA
+"MO","City of Richland - (MO)","electric","Municipal",NA
+"LA","Berwick Town of - LA","gas","Municipal",NA
+"NY","Reserve Gas Company Inc - NY","gas","Investor Owned","G2P Energy LLC"
+"MO","City of Albany - (MO)","electric","Municipal",NA
+"AL","Tallassee City of - AL","gas","Municipal",NA
+"GA","Tallapoosa City of - GA","gas","Municipal",NA
+"IA","City of Hartley - (IA)","electric","Municipal",NA
+"LA","Cgud of Grant Parish - LA","gas","Municipal",NA
+"GA","Hogansville City of - GA","gas","Municipal",NA
+"MO","City of Cuba Natural Gas - MO","gas","Municipal",NA
+"IA","Manning Mun Nat Gas - IA","gas","Municipal",NA
+"GA","Camilla City of - GA","gas","Municipal",NA
+"NE","City of Wisner (NE)","electric","Municipal",NA
+"OK","Chouteau Public Works Authority - OK","gas","Municipal",NA
+"KS","Halstead Mun Gas Dept - KS","gas","Municipal",NA
+"KY","Kuttawa City Of","gas","Municipal",NA
+"TN","Maury City Gas Dept - TN","gas","Municipal",NA
+"IA","Traer Municipal Utilities - IA","gas","Municipal",NA
+"TX","City of Marfa - TX","gas","Municipal",NA
+"NM","Lordsburg City of - NM","gas","Municipal",NA
+"MS","Ashland Town of - MS","gas","Municipal",NA
+"IL","Village of Greenup - (IL)","electric","Municipal",NA
+"MO","Milan Municipal Natural Gas System - MO","gas","Municipal",NA
+"IN","Lapel Municipal Water And Gas - IN","gas","Municipal",NA
+"MO","City of Shelbina - (MO)","electric","Municipal",NA
+"KY","Flemingsburg City of - KY","gas","Municipal",NA
+"KS","Humboldt City of - KS","gas","Municipal",NA
+"IA","Remsen Municipal Utilities - IA","gas","Municipal",NA
+"TX","Brazoria City of - TX","gas","Municipal",NA
+"AK","Barrow Utilities Electric Coop Inc - AK","gas","Municipal",NA
+"IL","Divernon Village of - IL","gas","Municipal",NA
+"TX","Castroville City of - TX","gas","Municipal",NA
+"MN","Community Util Co - MN","gas","Investor Owned",NA
+"KS","Cheney City of - KS","gas","Municipal",NA
+"LA","Jena Town of - LA","gas","Municipal",NA
+"MO","Unionville Municipal Natural Gas Sys - MO","gas","Municipal",NA
+"MN","Agrinatural Gas Llc - MN","gas","Investor Owned","Granite Falls Energy, LLC"
+"MN","Warren City of - MN","gas","Municipal",NA
+"IN","Valley Rural Utility Co - IN","gas","Cooperative",NA
+"KY","Bluegrass Gas Sales Inc - KY","gas","Investor Owned",NA
+"IL","Greenup Village of - IL","gas","Municipal",NA
+"MO","City of Stanberry - (MO)","electric","Municipal",NA
+"LA","Hornbeck Town of - LA","gas","Municipal",NA
+"OK","Haskell Public Works Authority - OK","gas","Municipal",NA
+"AL","Sumiton Town of - AL","gas","Municipal",NA
+"TX","Pearsall City of - TX","gas","Municipal",NA
+"TX","New Summerfield City of - TX","gas","Municipal",NA
+"TX","Sunray Util City of - TX","gas","Municipal",NA
+"MO","Potosi City of - MO","gas","Municipal",NA
+"AL","Dadeville Gas Board - AL","gas","Municipal",NA
+"NE","City of Pender - (NE)","electric","Municipal",NA
+"MO","Montgomery City Gas Co - MO","gas","Municipal",NA
+"MO","Waynesville Town of - MO","gas","Municipal",NA
+"MO","Middletown Mun Gas System - MO","gas","Municipal",NA
+"IA","City of Brooklyn - (IA)","electric","Municipal",NA
+"WV","Welch Gas Co Op - WV","gas","Cooperative",NA
+"MS","Shannon Town of - MS","gas","Municipal",NA
+"IA","City of Manning - (IA)","electric","Municipal",NA
+"NE","City of Stromsburg - (NE)","electric","Municipal",NA
+"MO","Albany Mun Gas Sys - MO","gas","Municipal",NA
+"KS","City of Burlingame - (KS)","electric","Municipal",NA
+"IN","Osgood Mun Sys - IN","gas","Municipal",NA
+"TX","Alto City of - TX","gas","Municipal",NA
+"IL","Waverly Util Dept - IL","gas","Municipal",NA
+"LA","Grand Isle Town of - LA","gas","Municipal",NA
+"LA","Woodworth Town of - LA","gas","Municipal",NA
+"IA","Guthrie Ctr Municipal Utilities - IA","gas","Municipal",NA
+"GA","Wrens City of - GA","gas","Municipal",NA
+"WV","Canaan Valley Gas Company - WY","gas","Investor Owned",NA
+"IA","Bedford City Natural Gas - IA","gas","Municipal",NA
+"TX","Morton City of - TX","gas","Municipal",NA
+"IA","Montezuma Natural Gas Dept - IA","gas","Municipal",NA
+"IL","Milford Village of - IL","gas","Municipal",NA
+"FL","Starke City of - FL","gas","Municipal",NA
+"AL","Dora Gas BD - AL","gas","Municipal",NA
+"LA","Town of Arnaudville - LA","gas","Municipal",NA
+"OH","Deshler Municipal Utilities - OH","gas","Municipal",NA
+"GA","Hawkinsville Natural Gas System City - GA","gas","Municipal",NA
+"FL","Williston City of - FL","gas","Municipal",NA
+"IA","Lake Park - IA","gas","Municipal",NA
+"IA","Lamoni Mun Util - IA","gas","Municipal",NA
+"LA","Town of Gueydan","electric","Municipal",NA
+"IA","City of Sanborn - (IA)","electric","Municipal",NA
+"LA","Jonesville Town of - LA","gas","Municipal",NA
+"MO","Granby City of - MO","gas","Municipal",NA
+"AL","Roanoke Utility Board - AL","gas","Municipal",NA
+"IL","Toldedo Village of - IL","gas","Municipal",NA
+"OK","Jay Utilities Authority - OK","gas","Municipal",NA
+"FL","Defuniak Springs City of - FL","gas","Municipal",NA
+"MN","City of Lake Park - (MN)","electric","Municipal",NA
+"TX","Carrizo Springs City of - TX","gas","Municipal",NA
+"FL","Madison City of - FL","gas","Municipal",NA
+"IL","Village of Bethany - (IL)","electric","Municipal",NA
+"OK","Minco Gas Auth - OK","gas","Municipal",NA
+"MN","Eagle Bendclarissa Gas Util - MN","gas","Municipal",NA
+"OH","Ohio Valley Gas Corp - IN","gas","Investor Owned",NA
+"TX","Big Lake City of - TX","gas","Municipal",NA
+"TN","Waynesboro City of - TN","gas","Municipal",NA
+"CA","Pittsburg Power Company","electric","Municipal",NA
+"KY","Navitas Utility Corp - KY","gas","Investor Owned",NA
+"MN","Paul Bunyan Natural Gas Llc - MN","gas","Investor Owned",NA
+"IL","Norris City Village of - IL","gas","Municipal",NA
+"TN","Nat Gas Util Dist Hawkins Cty - TN","gas","Political Subdivision",NA
+"MO","Shelbina City of - MO","gas","Municipal",NA
+"OK","Kiefer Public Works Auth - OK","gas","Municipal",NA
+"KY","Brooksville City of - KY","gas","Municipal",NA
+"IA","City of Mapleton- (IA)","electric","Municipal",NA
+"IL","Grayville City of - IL","gas","Municipal",NA
+"TX","City of Winona - TX","gas","Municipal",NA
+"NE","Pender Village of - NE","gas","Municipal",NA
+"IL","Rossville Mun Gas Village of - IL","gas","Municipal",NA
+"IL","Village of Crossville - IL","gas","Municipal",NA
+"IA","Corning Municipal Utilities - IA","gas","Municipal",NA
+"IA","Wellman Gas System - IA","gas","Municipal",NA
+"IA","Coon Rapids Mun Util - IA","gas","Municipal",NA
+"KS","City of Alma - (KS)","electric","Municipal",NA
+"GA","Louisville City of - GA","gas","Municipal",NA
+"UT","Mona City - UT","gas","Municipal",NA
+"IL","Bethany Village of - IL","gas","Municipal",NA
+"MN","City of Tyler - (MN)","electric","Municipal",NA
+"KY","Olive Hill City Of","gas","Municipal",NA
+"TN","South Fulton City of - TN","gas","Municipal",NA
+"IL","Vienna Municipal Gas System - IL","gas","Municipal",NA
+"MN","City of Henning - (MN)","electric","Municipal",NA
+"OK","City of Granite - (OK)","electric","Municipal",NA
+"GA","Bainbridge City of - GA","gas","Municipal",NA
+"IA","Brooklyn Municipal Utilities - IA","gas","Municipal",NA
+"LA","Maringouin Town Of","gas","Municipal",NA
+"LA","Waynesboro City of - Ga","gas","Municipal",NA
+"OK","City of Yale - (OK)","electric","Municipal",NA
+"MO","Stanberry City of - MO","gas","Municipal",NA
+"KY","Bardwell Nat Gas - KY","gas","Municipal",NA
+"TX","City of Hemphill - (TX)","electric","Municipal",NA
+"IA","Sanborn Municipal Gas Utility - IA","gas","Municipal",NA
+"IA","City of Lake Park - (IA)","electric","Municipal",NA
+"AR","North Crossett Utilities Gas & Water - AR","gas","Municipal",NA
+"IL","Jonesboro City of - IL","gas","Municipal",NA
+"LA","Sunset Town of - LA","gas","Municipal",NA
+"AL","Bridgeport Util BD - AL","gas","Municipal",NA
+"MO","New Haven City Natural Gas System - MO","gas","Municipal",NA
+"KS","City of Altamont - (KS)","electric","Municipal",NA
+"NC","Toccoa Natural Gas System - GA","gas","Municipal",NA
+"TX","Eldorado City of - TX","gas","Municipal",NA
+"TX","Huntington City of - TX","gas","Municipal",NA
+"IL","Findlay Village of - IL","gas","Municipal",NA
+"IA","City of Fairbank - (IA)","electric","Municipal",NA
+"TX","Appleby Natural Gas - TX","gas","Municipal",NA
+"IA","Wayland Mun Gas Sys - IA","gas","Municipal",NA
+"FL","Blountstown City of - FL","gas","Municipal",NA
+"KS","Burlingame City of - KS","gas","Municipal",NA
+"IA","Lenox Gas System - IA","gas","Municipal",NA
+"TN","Mason Natural Gas - TN","gas","Municipal",NA
+"MS","Duck Hill Nat Gas Sys - MS","gas","Municipal",NA
+"NE","Wisner City of - NE","gas","Municipal",NA
+"MO","Princeton Municipal Natural Gas Sys - MO","gas","Municipal",NA
+"NE","Stromsburg City of - NE","gas","Municipal",NA
+"IL","Edinburg Mun Gas System - IL","gas","Municipal",NA
+"KY","Citipower Llc - KY","gas","Municipal",NA
+"KS","Altamont City of - KS","gas","Municipal",NA
+"MN","New York Mills Mun Gas Sys - MN","gas","Municipal",NA
+"OH","Mccomb Natural Gas - OH","gas","Municipal",NA
+"TN","Poplar Grove Util Dist - TN","gas","Political Subdivision",NA
+"MD","UGI Utilities, Inc","gas","Investor Owned",NA
+"IL","Martinsville City of - IL","gas","Municipal",NA
+"KY","Clay City Of","gas","Municipal",NA
+"IL","Bluford Gas - IL","gas","Municipal",NA
+"LA","Gueydan Town of - LA","gas","Municipal",NA
+"LA","Washington Parish Gud  2 - LA","gas","Municipal",NA
+"MN","Tyler City of - MN","gas","Municipal",NA
+"FL","Jasper City of - FL","gas","Municipal",NA
+"KY","Carlisle City of - KY","gas","Municipal",NA
+"MO","City of Perry - (MO)","electric","Municipal",NA
+"KY","Clinton City of - KY","gas","Municipal",NA
+"AL","Maplesville Ut BD - AL","gas","Municipal",NA
+"IA","City of Alton","electric","Municipal",NA
+"CO","Ignacio Town of - CO","gas","Municipal",NA
+"MN","Goodhue City of - MN","gas","Municipal",NA
+"OK","Fairfax Town of - OK","gas","Municipal",NA
+"KY","Vanceburg Electric Plant Board of - KY","gas","Municipal",NA
+"TN","Navitas Utility Corp - TN","gas","Investor Owned",NA
+"MO","Paris City of - MO","gas","Municipal",NA
+"IA","City of West Bend - (IA)","electric","Municipal",NA
+"IA","Fairbank Municipal Gas - IA","gas","Municipal",NA
+"LA","West Feliciano Parish Gud 1","gas","Municipal",NA
+"NE","City of Stuart - (NE)","electric","Municipal",NA
+"NE","City of Scribner - (NE)","electric","Municipal",NA
+"NE","City of Lyons - (NE)","electric","Municipal",NA
+"TX","Plains City of - TX","gas","Municipal",NA
+"GA","Millen City of - GA","gas","Municipal",NA
+"MN","United Natural Gas Llc - MN","gas","Cooperative",NA
+"LA","Forest Hill Village of - LA","gas","Municipal",NA
+"IA","Mapleton City of - IA","gas","Municipal",NA
+"IA","Winfield Municipal Gas - IA","gas","Municipal",NA
+"OK","Sperry Utility Services Auth - OK","gas","Municipal",NA
+"IL","Stonington Village of - IL","gas","Municipal",NA
+"IL","Village of Pleasant Hill - IL","gas","Municipal",NA
+"IA","Alton Municipal Utilities - IA","gas","Municipal",NA
+"NE","Alma Nat Gas Co City of - NE","gas","Municipal",NA
+"KY","Valley Gas Inc - KY","gas","Investor Owned",NA
+"IA","City of Wall Lake - (IA)","electric","Municipal",NA
+"LA","Clinton Town of - LA","gas","Municipal",NA
+"KY","Kevil City of - KY","gas","Municipal",NA
+"LA","Morganza Village of - LA","gas","Municipal",NA
+"LA","Jpc Energy Llc - LA","gas","Investor Owned",NA
+"OK","Yale Water & Sewer Trust - OK","gas","Municipal",NA
+"LA","Colfax Gas Dept - LA","gas","Municipal",NA
+"MS","Tishomingo City Of","gas","Municipal",NA
+"KY","Martin Gas Inc","gas","Investor Owned",NA
+"OK","Granite Town of - OK","gas","Municipal",NA
+"TN","Horton Hwy Util Dist - TN","gas","Political Subdivision",NA
+"LA","Port Barre Town of - LA","gas","Municipal",NA
+"KY","West Liberty Gas System - KY","gas","Municipal",NA
+"NE","Lyons City of - NE","gas","Municipal",NA
+"TX","Mclean City of - TX","gas","Municipal",NA
+"MN","Lake Park Public Utilities - MN","gas","Municipal",NA
+"MS","Waveland City of - MS","gas","Municipal",NA
+"OH","Foraker Gas Co  Inc - OH","gas","Investor Owned",NA
+"IA","City of Sabula - (IA)","electric","Municipal",NA
+"MN","Hallock City of - MN","gas","Municipal",NA
+"OK","City of Geary - (OK)","electric","Municipal",NA
+"TX","Sundown City of - TX","gas","Municipal",NA
+"IN","Montezuma Municipal Gas Utility - IN","gas","Municipal",NA
+"FL","Havana Town of - FL","gas","Municipal",NA
+"KY","City of Bardwell - (KY)","electric","Municipal",NA
+"OK","Fairland Gas Auth - OK","gas","Municipal",NA
+"MN","City of Morgan - MN","gas","Municipal",NA
+"FL","Chattahoochee City of - FL","gas","Municipal",NA
+"LA","Washington Town of - LA","gas","Municipal",NA
+"KS","Spearville City of - KS","gas","Municipal",NA
+"TN","Collinwood City of - TN","gas","Municipal",NA
+"MO","City of Liberal - (MO)","electric","Municipal",NA
+"IL","Louisville Village of - IL","gas","Municipal",NA
+"KS","Mclouth City Of","gas","Municipal",NA
+"IA","Graettinger Town of - IA","gas","Municipal",NA
+"MN","City of Randall - (MN)","electric","Municipal",NA
+"OH","The Swickard Gas Co - OH","gas","Investor Owned",NA
+"IL","Shawneetown Municipal Gas - IL","gas","Municipal",NA
+"IN","Poseyville Mun Gas Co - IN","gas","Municipal",NA
+"OK","Geary Utility Authority - OK","gas","Municipal",NA
+"PA","Leatherstocking Gas Company Llc - PA","gas","Investor Owned","Corning Energy Corporation (Apollo Global Management)"
+"IA","Morning Sun Municipal Nat Gas Sys - IA","gas","Municipal",NA
+"LA","Town of Boyce","electric","Municipal",NA
+"KS","La Cygne Gas Company - KS","gas","Municipal",NA
+"IL","New Boston Mun Gas Sys - IL","gas","Municipal",NA
+"OK","Seiling Public Works Authority - OK","gas","Municipal",NA
+"MO","Perry Municipal Gas System - MO","gas","Municipal",NA
+"OK","Vici Pub Work Auth - OK","gas","Municipal",NA
+"LA","Leonville Town of - LA","gas","Municipal",NA
+"NE","Ponca Public Utilities - NE","gas","Municipal",NA
+"IL","Cisne Village of - IL","gas","Municipal",NA
+"LA","Delcambre Town of - LA","gas","Municipal",NA
+"LA","Livonia Gas And Water - LA","gas","Municipal",NA
+"TN","Obion Town of - TN","gas","Municipal",NA
+"IL","Clay City Village of - IL","gas","Municipal",NA
+"MS","Walnut Grove Town of - MS","gas","Municipal",NA
+"MO","Bismarck City of - MO","gas","Municipal",NA
+"NE","Stuart Gas Co - NE","gas","Municipal",NA
+"LA","Jackson Town of - LA","gas","Municipal",NA
+"KY","Liberty Gas Co - KY","gas","Investor Owned","Algonquin Power & Utilities Corp"
+"AL","Vina Town of Natural Gas - AL","gas","Municipal",NA
+"NE","Scribner Municipal Gas - NE","gas","Municipal",NA
+"IA","West Bend Mun Gas - IA","gas","Municipal",NA
+"IA","Wall Lake City of - IA","gas","Municipal",NA
+"MN","Randall City of - MN","gas","Municipal",NA
+"KY","Wickliffe City of - KY","gas","Municipal",NA
+"IA","Everly Muncipal Utility - IA","gas","Municipal",NA
+"KY","Lake Cumberland Gas Authority - KY","gas","Municipal",NA
+"IL","Geff Village of - IL","gas","Municipal",NA
+"TN","Clifton Gas Dept - TN","gas","Municipal",NA
+"TX","T And L Gas Co - TX","gas","Investor Owned",NA
+"IL","Cobden Mun Gas Sys - IL","gas","Municipal",NA
+"KY","Arlington City of - KY","gas","Municipal",NA
+"MO","City of Grant City Missouri - MO","gas","Municipal",NA
+"LA","Montgomery Town of - LA","gas","Municipal",NA
+"KY","La Center City of - KY","gas","Municipal",NA
+"IA","Sabula City of - IA","gas","Municipal",NA
+"LA","Town of Boyce - LA","gas","Municipal",NA
+"MN","Argyle City of - MN","gas","Municipal",NA
+"KS","Howard City of - KS","gas","Municipal",NA
+"TX","City of Goldsmith - (TX)","electric","Municipal",NA
+"IN","Roachdale Municipal Gas Utility - IN","gas","Municipal",NA
+"KY","Burkesville Gas Co - KY","gas","Investor Owned","Summit"
+"KS","Argonia City of - KS","gas","Municipal",NA
+"WY","Frannie Deaver Utilities - WY","gas","Investor Owned",NA
+"LA","Iota Town of - LA","gas","Municipal",NA
+"LA","Simmesport Town of - LA","gas","Municipal",NA
+"IN","Bainbridge Municipal Gas Utility - IN","gas","Municipal",NA
+"IL","Enfield Municipal Gas System - IL","gas","Municipal",NA
+"TX","Marietta City of - TX","gas","Municipal",NA
+"MO","Richland City of - MO","gas","Municipal",NA
+"GA","Fort Gaines City of - GA","gas","Municipal",NA
+"AL","Stevenson Util BD - AL","gas","Municipal",NA
+"TX","Rankin City of - TX","gas","Municipal",NA
+"KY","Wheelwright Util Comm - KY","gas","Municipal",NA
+"OK","Cashion Pub Wks Auth - OK","gas","Municipal",NA
+"MO","Liberal Municipal Natural Gas System - MO","gas","Municipal",NA
+"MN","Clearbrook Municipal Gas City of - MN","gas","Municipal",NA
+"KS","Little River City of - KS","gas","Municipal",NA
+"LA","Logansport Town of - LA","gas","Municipal",NA
+"TX","Cushing City of - TX","gas","Municipal",NA
+"KY","Barlow Mun Gas Co - KY","gas","Municipal",NA
+"GA","Bowman City of - GA","gas","Municipal",NA
+"TX","Hemphill City of - TX","gas","Municipal",NA
+"TX","City of Spur - TX","gas","Municipal",NA
+"KS","Mulberry Municipal Natural Gas Sys - KS","gas","Municipal",NA
+"MO","Wheaton City of - MO","gas","Municipal",NA
+"TX","George West City of - TX","gas","Municipal",NA
+"TN","Englewood Utilities - TN","gas","Municipal",NA
+"TX","Chester Gas Sys - TX","gas","Municipal",NA
+"IA","Gilmore City Municipal Gas System - IA","gas","Municipal",NA
+"AL","Cordova Wtr Wks And Gas BD - AL","gas","Municipal",NA
+"TX","Pineland City of - TX","gas","Municipal",NA
+"IA","Rolfe Municipal Gas - IA","gas","Municipal",NA
+"TX","Woodsboro Natural Gas - TX","gas","Municipal",NA
+"LA","St Joseph Mun Nat Gas - LA","gas","Municipal",NA
+"LA","Village of Elizabeth - LA","gas","Municipal",NA
+"IL","Equality Municipal Gas - IL","gas","Municipal",NA
+"KY","Sentra Resources - KY","gas","Investor Owned",NA
+"FL","Town of Jay - FL","gas","Municipal",NA
+"TX","City of Cross Plains - TX","gas","Municipal",NA
+"AL","Florala Gas Department - AL","gas","Municipal",NA
+"LA","Basile Town of - LA","gas","Municipal",NA
+"TX","Kountze City of - TX","gas","Municipal",NA
+"MN","City of Round Lake - (MN)","electric","Municipal",NA
+"PA","Sar Gas - PA","gas","Investor Owned",NA
+"AL","Brookside Gas System - AL","gas","Municipal",NA
+"MS","Gloster Town of - MS","gas","Municipal",NA
+"MO","Madison City of - MO","gas","Municipal",NA
+"OK","Covington Town of - OK","gas","Municipal",NA
+"MO","New Florence Municipal Gas - MO","gas","Municipal",NA
+"KY","Ferguson City of - KY","gas","Municipal",NA
+"IN","Chrisney Municipal Gas Dept - IN","gas","Municipal",NA
+"MN","Round Lake City of - MN","gas","Municipal",NA
+"MO","Green City Municipal Natural Gas Sys - MO","gas","Municipal",NA
+"IA","Moulton Mun Gas Sys - IA","gas","Municipal",NA
+"MT","Saco Municipal Gas Svc - MT","gas","Municipal",NA
+"IL","City of Grand Tower - IL","gas","Municipal",NA
+"TX","Brackettville City of - TX","gas","Municipal",NA
+"IA","Allerton Gas Co - IA","gas","Investor Owned",NA
+"LA","Vernon Parish Gud 1 - LA","gas","Municipal",NA
+"TX","Whiteface City of - TX","gas","Municipal",NA
+"LA","Krotz Springs City of - LA","gas","Municipal",NA
+"MS","Liberty Town of - MS","gas","Municipal",NA
+"LA","Columbia Town of - LA","gas","Municipal",NA
+"KS","Denison City of - KS","gas","Municipal",NA
+"KY","Paris - KY","gas","Municipal",NA
+"KY","White Plains Natural Gas - KY","gas","Municipal",NA
+"NY","Rochester Gas And Elec Corp - NY","gas","Investor Owned","Avangrid"
+"KS","Uniontown City of - KS","gas","Municipal",NA
+"LA","Provencal Village of - LA","gas","Municipal",NA
+"TN","Gallaway City of - TN","gas","Municipal",NA
+"KS","Sharon City of - KS","gas","Municipal",NA
+"KS","Cassoday City of - KS","gas","Municipal",NA
+"KS","Mcfarland City of - KS","gas","Municipal",NA
+"KS","Sylvia Town of - KS","gas","Municipal",NA
+"KS","Winona Gas - KS","gas","Municipal","Midwest Energy, Inc. is the operator"
+"IA","Clearfield Nat Gas Co - IA","gas","Municipal",NA
+"GA","Richland City of - GA","gas","Municipal",NA
+"OK","Wakita Utilities Authority - OK","gas","Municipal",NA
+"KY","Guthrie Natural Gas - KY","gas","Municipal",NA
+"KS","Partridge City of - KS","gas","Municipal",NA
+"TX","Goldsmith City of - TX","gas","Municipal",NA
+"GA","Colquitt Gas Sys City of - GA","gas","Municipal",NA
+"TX","D & H Gas Co - TX","gas","Investor Owned",NA
+"IA","Prescott Mun Nat Gas Co - IA","gas","Municipal",NA
+"LA","Sicily Island Gas Co - LA","gas","Municipal",NA
+"OK","Freedom Municipal Trust Authority - OK","gas","Municipal",NA
+"AL","Rockford Town of - AL","gas","Municipal",NA
+"KS","City of Hardtner - KS","gas","Municipal",NA
+"MO","Mercer Municipal Natural Gas System - MO","gas","Municipal",NA
+"NM","Corona Village of - NM","gas","Municipal",NA
+"TX","Daisetta City of - TX","gas","Municipal",NA
+"IA","Lineville Mun Nat Gas System - IA","gas","Municipal",NA
+"OK","Hardesty Town of - OK","gas","Municipal",NA
+"OR","Umpqua Indian Utility Cooperative","electric","Cooperative",NA
+"KS","Sawyer City of - KS","gas","Municipal",NA
+"OK","Greenlight Gas - TX","gas","Investor Owned",NA
+"GA","Andersonville City of - GA","gas","Municipal",NA
+"OK","Slick Town of - OK","gas","Municipal",NA
+"IA","City of Orange City - (IA)","electric","Municipal",NA
+"OK","Wann Public Works Authority - OK","gas","Municipal",NA
+"OK","Willow Town of - OK","gas","Municipal",NA
+"KS","Abbyville City of - KS","gas","Municipal",NA
+"IA","Orange City Municipal Utilities - IA","gas","Municipal",NA
+"KY","Millennium Energy Inc - KY","gas","Investor Owned","Atmos"
+"KY","Western Lewis Rectorville Gas Dist - KY","gas","Political Subdivision",NA
+"IA","Manilla City of - IA","gas","Municipal",NA
+"IA","Town of Manilla - (IA)","electric","Municipal",NA
+"WV","Standard Gas Co - WV","gas","Investor Owned","Hope Gas"
