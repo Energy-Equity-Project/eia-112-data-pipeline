@@ -1,0 +1,25 @@
+# Per-repo Claude context (local only, not committed)
+CLAUDE.md
+
+# Data files — shared data lives only in Data/ and Cleaned_Data/, never committed
+*.csv
+*.xlsx
+
+# Scratch / generated — ignore contents but keep the empty dirs (via .gitkeep below)
+outputs/*
+temp/*
+
+# R session / project artifacts
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+.Renviron
+.env
+
+# OS
+.DS_Store
+
+# Keep empty scratch dirs tracked
+!outputs/.gitkeep
+!temp/.gitkeep
