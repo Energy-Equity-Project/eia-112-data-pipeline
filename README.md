@@ -1,5 +1,7 @@
 # eia-112-data-pipeline
 
+Based on work from Energy Equity Project (Rahul Agrawal Bejarano), and Energy and Policy Institute (Shelby Green, Jonathan Kim)
+
 Standalone pipeline that cleans the **utility-level** EIA Form 112 residential
 disconnection workbooks into analysis-ready CSVs. This repo is the single source of truth
 for the utility-level EIA-112 cleaning behind the **2024 Residential Utility Disconnections
