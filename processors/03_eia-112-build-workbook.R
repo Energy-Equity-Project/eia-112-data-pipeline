@@ -1,7 +1,7 @@
 # 03_eia-112-build-workbook.R
 # Assembles the three utility-level EIA-112 pipeline CSVs into a single formatted
-# Excel workbook with five sheets: Documentation, Utility Annual, Utility Monthly,
-# State Adjustments, Bad Data Flags.
+# Excel workbook with six sheets: Documentation, Utility Annual, Utility Monthly,
+# State Adjustments, Bad Data Flags, Bad Data Monthly.
 # Output: Cleaned_Data/eia/112/DD-MM-YYYY-eia-112-utility-workbook.xlsx
 
 library(tidyverse)
@@ -43,9 +43,13 @@ baddata     <- read.csv(baddata_path, stringsAsFactors = FALSE)
 utility_monthly <- monthly_raw %>% filter(utility_name != "State Adjustment")
 state_adj       <- monthly_raw %>% filter(utility_name == "State Adjustment")
 
+bad_data_monthly <- utility_monthly %>%
+  semi_join(baddata, by = c("state", "utility_name", "energy_type")) %>%
+  arrange(state, utility_name, energy_type, month)
+
 message(sprintf(
-  "Utility Monthly: %d rows | State Adjustments: %d rows | Utility Annual: %d rows | Bad Data Flags: %d rows",
-  nrow(utility_monthly), nrow(state_adj), nrow(annual), nrow(baddata)
+  "Utility Monthly: %d rows | State Adjustments: %d rows | Utility Annual: %d rows | Bad Data Flags: %d rows | Bad Data Monthly: %d rows",
+  nrow(utility_monthly), nrow(state_adj), nrow(annual), nrow(baddata), nrow(bad_data_monthly)
 ))
 
 # ---------------------------------------------------------------------------
@@ -121,13 +125,14 @@ wv(c("SHEET INDEX", ""))
 bold_doc(cur_row - 2L)
 
 wt(data.frame(
-  `Sheet Name`     = c("Utility Annual", "Utility Monthly", "State Adjustments", "Bad Data Flags"),
-  `Rows (approx.)` = c("~2,148", "~25,956", "~1,224", "145"),
+  `Sheet Name`     = c("Utility Annual", "Utility Monthly", "State Adjustments", "Bad Data Flags", "Bad Data Monthly"),
+  `Rows (approx.)` = c("~2,148", "~25,956", "~1,224", "145", "~1,740"),
   `Description`    = c(
     "Annual utility-level summary for 2024, enriched with ownership, disconnection-intensity rates, and percentile rankings. 19 columns.",
     "Monthly utility-level disconnection activity for 2024 (long format: one row per utility x fuel x month). Excludes State Adjustment rows. 9 columns.",
     "Monthly State Adjustment rows isolated from the monthly output. EIA estimation values accounting for nonresponse and data-quality resolutions. Not real utilities. 9 columns.",
-    "Rows EEP flagged as having bad or incomplete 2024 reporting. Retained in the annual output but excluded from percentile benchmarks. Same 19-column schema as Utility Annual."
+    "Rows EEP flagged as having bad or incomplete 2024 reporting. Retained in the annual output but excluded from percentile benchmarks. Same 19-column schema as Utility Annual.",
+    "Monthly disconnection activity (long format) for the 145 bad-data-flagged utility-fuel combos only. Same 9-column schema as Utility Monthly; a filtered view for reviewing flagged utilities month by month."
   ),
   check.names = FALSE
 ))
@@ -260,6 +265,14 @@ wv(c(
   ""
 ))
 
+wv(c(
+  "Bad Data Monthly — Utility Monthly filtered to the 145 bad-data-flagged utilities (9 columns)",
+  ""
+))
+bold_doc(cur_row - 2L)
+wt(monthly_dict)
+wv("")
+
 # -- Key limitations --
 wv(c("KEY LIMITATIONS", ""))
 bold_doc(cur_row - 2L)
@@ -297,13 +310,14 @@ openxlsx::addStyle(wb, "Documentation", wrap_style,
                    rows = 1:(cur_row - 1L), cols = 1:3, gridExpand = TRUE, stack = TRUE)
 
 # ---------------------------------------------------------------------------
-# 2-5. Data sheets (Documentation is already sheet 1)
+# 2-6. Data sheets (Documentation is already sheet 1)
 # ---------------------------------------------------------------------------
 
 add_data_sheet("Utility Annual",    annual)
 add_data_sheet("Utility Monthly",   utility_monthly)
 add_data_sheet("State Adjustments", state_adj)
 add_data_sheet("Bad Data Flags",    baddata)
+add_data_sheet("Bad Data Monthly",  bad_data_monthly)
 
 # ---------------------------------------------------------------------------
 # Write workbook — dual-write to Cleaned_Data and repo outputs/
@@ -319,6 +333,6 @@ for (base in output_bases) {
   message("Workbook written to: ", path)
 }
 
-message("\nSheet order: Documentation, Utility Annual, Utility Monthly, State Adjustments, Bad Data Flags")
-message(sprintf("Row counts: Annual=%d, Monthly=%d, State Adjustments=%d, Bad Data Flags=%d",
-                nrow(annual), nrow(utility_monthly), nrow(state_adj), nrow(baddata)))
+message("\nSheet order: Documentation, Utility Annual, Utility Monthly, State Adjustments, Bad Data Flags, Bad Data Monthly")
+message(sprintf("Row counts: Annual=%d, Monthly=%d, State Adjustments=%d, Bad Data Flags=%d, Bad Data Monthly=%d",
+                nrow(annual), nrow(utility_monthly), nrow(state_adj), nrow(baddata), nrow(bad_data_monthly)))
