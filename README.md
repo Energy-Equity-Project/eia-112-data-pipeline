@@ -21,12 +21,17 @@ Data/eia/112/*.xlsx
                                               └─ 02_eia-112-utility-annual_processor.R
                                                  + Cleaned_Data/eia/861/DD-MM-YYYY-eia-861-sales.csv (ownership)
                                                      ──▶ Cleaned_Data/eia/112/DD-MM-YYYY-eia-112-utility-annual.csv  (annual, enriched)
+                                                     ──▶ Cleaned_Data/eia/112/DD-MM-YYYY-eia-112-utility-bad-data.csv (flagged rows only)
+                                                              └─ 03_eia-112-build-workbook.R  (reads all three CSVs)
+                                                                     ──▶ Cleaned_Data/eia/112/DD-MM-YYYY-eia-112-utility-workbook.xlsx
 ```
 
 - **Stage 1** reshapes the two raw workbooks (electric + gas) into one row per utility ×
   fuel × month.
 - **Stage 2** aggregates to annual, joins EIA-861 ownership, and adds disconnection-intensity
   rates and national/state/ownership percentile rankings.
+- **Stage 3** reads the three CSVs produced by Stages 1 and 2 and assembles them into a
+  single formatted Excel workbook with a Documentation sheet and four data sheets.
 
 Each stage writes every output CSV to **both** `Cleaned_Data/eia/112/` and the repo-local
 `outputs/` folder. Inputs are still resolved only from `Cleaned_Data/`, so the local copies
@@ -43,17 +48,18 @@ eia-112-data-pipeline/
 │   └── eia-112_collector.md                      # manual download instructions
 ├── processors/
 │   ├── 01_eia-112-utility_processor.R            # Stage 1: raw workbooks → monthly long
-│   └── 02_eia-112-utility-annual_processor.R     # Stage 2: monthly → annual + ownership + rates
-├── outputs/                                      # repo-local copy of generated CSVs (gitignored)
+│   ├── 02_eia-112-utility-annual_processor.R     # Stage 2: monthly → annual + ownership + rates
+│   └── 03_eia-112-build-workbook.R               # Stage 3: assemble CSVs into formatted .xlsx
+├── outputs/                                      # repo-local copy of generated files (gitignored)
 └── temp/                                         # scratch (gitignored)
 ```
 
 ## Setup
 
-**Prerequisites:** R (≥ 4.0) with `tidyverse` and `readxl`.
+**Prerequisites:** R (≥ 4.0) with `tidyverse`, `readxl`, and `openxlsx`.
 
 ```r
-install.packages(c("tidyverse", "readxl"))
+install.packages(c("tidyverse", "readxl", "openxlsx"))
 ```
 
 **Inputs** (referenced via relative paths to the shared data folders — do not copy into this repo):
@@ -65,27 +71,31 @@ To obtain the raw workbooks, see `collectors/eia-112_collector.md`.
 
 ## Running
 
-Run **from the repo root**, in order (Stage 2 auto-detects Stage 1's latest output):
+Run **from the repo root**, in order (each stage auto-detects its upstream inputs):
 
 ```bash
 Rscript processors/01_eia-112-utility_processor.R
 Rscript processors/02_eia-112-utility-annual_processor.R
+Rscript processors/03_eia-112-build-workbook.R
 ```
 
-Each script prints sanity checks. Expected 2024 values are tabulated in `METHODOLOGY.md`
+Stages 1 and 2 print sanity checks. Expected 2024 values are tabulated in `METHODOLOGY.md`
 (§7) — notably ~2,148 annual rows, ~1,226 electric / ~922 gas, ~89% / ~7% ownership match,
-and percentiles spanning 0–1.
+and percentiles spanning 0–1. Stage 3 can be run alone if the CSVs from Stages 1 and 2 are
+already current — it only reads them.
 
 ## Outputs
 
 | File | Stage | Rows | Description |
 |------|-------|------|-------------|
 | `Cleaned_Data/eia/112/DD-MM-YYYY-eia-112-utility-shutoffs.csv` | 1 | ~27,000 | Monthly utility-level shutoffs (long: utility × fuel × month) |
-| `Cleaned_Data/eia/112/DD-MM-YYYY-eia-112-utility-annual.csv` | 2 | ~2,148 | Annual summary with ownership, rates, and peer percentiles |
+| `Cleaned_Data/eia/112/DD-MM-YYYY-eia-112-utility-annual.csv` | 2 | ~2,148 | Annual summary with ownership, rates, and peer percentiles (19 cols) |
+| `Cleaned_Data/eia/112/DD-MM-YYYY-eia-112-utility-bad-data.csv` | 2 | 145 | Flagged-rows-only extract from the annual output (same 19 cols) |
+| `Cleaned_Data/eia/112/DD-MM-YYYY-eia-112-utility-workbook.xlsx` | 3 | — | Consolidated workbook: Documentation + 4 data sheets |
 
-Stage 2 also writes a `DD-MM-YYYY-eia-112-utility-bad-data.csv` (the 145 flagged rows).
-Each of these files is written to both `Cleaned_Data/eia/112/` and the repo-local `outputs/`
-folder. Output schemas are documented in both `METHODOLOGY.md` and `Cleaned_Data/eia/112/CLEANED.md`.
+Each file is written to both `Cleaned_Data/eia/112/` and the repo-local `outputs/` folder.
+CSV schemas are documented in both `METHODOLOGY.md` and `Cleaned_Data/eia/112/CLEANED.md`.
+The workbook's Documentation sheet is the in-workbook authoritative copy of the schema.
 
 ## Documentation
 

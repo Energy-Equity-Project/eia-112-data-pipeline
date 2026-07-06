@@ -21,11 +21,14 @@ The pipeline produces two cleaned datasets, run in order:
 |-------|--------|-------|--------|
 | 1 | `processors/01_eia-112-utility_processor.R` | Two raw EIA-112 utility workbooks (electric + gas) | `Cleaned_Data/eia/112/DD-MM-YYYY-eia-112-utility-shutoffs.csv` (monthly, long) |
 | 2 | `processors/02_eia-112-utility-annual_processor.R` | Stage 1 output + EIA-861 sales (ownership) + EEP bad-data flags | `Cleaned_Data/eia/112/DD-MM-YYYY-eia-112-utility-annual.csv` (annual, enriched); `DD-MM-YYYY-eia-112-utility-bad-data.csv` (flagged rows only) |
+| 3 | `processors/03_eia-112-build-workbook.R` | All three CSVs from Stages 1 and 2 (auto-detected from `Cleaned_Data/eia/112/`) | `Cleaned_Data/eia/112/DD-MM-YYYY-eia-112-utility-workbook.xlsx` (consolidated workbook) |
 
 Stage 1 reshapes the raw workbooks into one analysis-ready row per **utility × fuel ×
 month**. Stage 2 collapses that to one row per **utility × fuel × year**, attaches an
 ownership classification from EIA Form 861, derives disconnection-intensity rates, and
 ranks each utility's shutoff rate against national, state, and ownership peer groups.
+Stage 3 is a pure assembler — it reads the three CSVs produced by Stages 1 and 2 and
+packages them into a single formatted Excel workbook for distribution.
 
 The goal is to support utility-level analysis of residential disconnections: which
 utilities disconnect most relative to their customer base, how that varies by ownership
@@ -270,7 +273,30 @@ for both fuels after the EEP supplement.
 
 ---
 
-## 5. Output files & locations
+## 5. Stage 3 — consolidated workbook assembler
+
+Script: `processors/03_eia-112-build-workbook.R`. Run from the repo root after Stages 1 and
+2 (or independently if the three CSVs are already current — Stage 3 only reads them).
+Stage 3 does not modify the CSVs; it is a pure assembler.
+
+1. **Auto-detect inputs** — `resolve_latest_csv()` locates the latest of each:
+   `*-eia-112-utility-shutoffs.csv`, `*-eia-112-utility-annual.csv`, and
+   `*-eia-112-utility-bad-data.csv` from `Cleaned_Data/eia/112/`. No manual path edits needed.
+2. **Split the monthly CSV** — rows where `utility_name == "State Adjustment"` go to the
+   State Adjustments sheet; all other rows go to the Utility Monthly sheet.
+3. **Assemble five sheets** in order: Documentation, Utility Annual, Utility Monthly,
+   State Adjustments, Bad Data Flags.
+4. **Documentation sheet** — a single formatted text tab (wrapped text, 55/18/80 column
+   widths) containing: title block and generation date; sheet index; data sources and
+   citations; per-sheet column dictionaries (sourced from this document's schemas); and
+   key limitations from the EIA report methodology.
+5. **Data sheets** — each receives a bold/shaded header row (`fgFill = "#D9E1F2"`), a
+   frozen header row (`firstActiveRow = 2`), and auto-sized column widths.
+6. **Dual-write** to `Cleaned_Data/eia/112/` and the repo-local `outputs/` folder, same
+   pattern as Stages 1 and 2. The `.xlsx` is gitignored; only the `Cleaned_Data/` copy
+   is synced to S3.
+
+## 6. Output files & locations
 
 All outputs are written to the shared `Cleaned_Data/eia/112/` directory (never committed to
 this repo) with a `Sys.Date()` stamp in `DD-MM-YYYY` format:
@@ -278,12 +304,15 @@ this repo) with a `Sys.Date()` stamp in `DD-MM-YYYY` format:
 - `Cleaned_Data/eia/112/DD-MM-YYYY-eia-112-utility-shutoffs.csv` (Stage 1)
 - `Cleaned_Data/eia/112/DD-MM-YYYY-eia-112-utility-annual.csv` (Stage 2, all rows, 19 cols)
 - `Cleaned_Data/eia/112/DD-MM-YYYY-eia-112-utility-bad-data.csv` (Stage 2, flagged rows only, 19 cols)
+- `Cleaned_Data/eia/112/DD-MM-YYYY-eia-112-utility-workbook.xlsx` (Stage 3, consolidated workbook)
 
-Schemas and per-dataset notes are mirrored in `Cleaned_Data/eia/112/CLEANED.md`.
+CSV schemas and per-dataset notes are mirrored in `Cleaned_Data/eia/112/CLEANED.md`. The
+workbook's Documentation sheet is the in-workbook authoritative copy of the schema and is
+suitable for inclusion in report appendices or data deliveries.
 
 ---
 
-## 6. Quality flags & known caveats
+## 7. Quality flags & known caveats
 
 - **No Q/R flags at the utility level.** The state/national report workbook carries EIA
   quality flags (`Q` = response rate < 50%; `R` = RSE > 50%), but the utility-level
@@ -308,18 +337,19 @@ Schemas and per-dataset notes are mirrored in `Cleaned_Data/eia/112/CLEANED.md`.
 
 ---
 
-## 7. Reproduction
+## 8. Reproduction
 
-**Requirements:** R (≥ 4.0) with `tidyverse` and `readxl`. Raw workbooks present in
-`Data/eia/112/`; a cleaned EIA-861 sales CSV present in `Cleaned_Data/eia/861/`;
+**Requirements:** R (≥ 4.0) with `tidyverse`, `readxl`, and `openxlsx`. Raw workbooks present
+in `Data/eia/112/`; a cleaned EIA-861 sales CSV present in `Cleaned_Data/eia/861/`;
 `data/eia-112-manual-ownership-overrides.csv` and `data/eia-112-manual-bad-data-flags.csv`
 present in the repo (both committed).
 
-Run **from the repo root**, in order (Stage 2 auto-detects Stage 1's latest output):
+Run **from the repo root**, in order (each stage auto-detects its upstream inputs):
 
 ```bash
 Rscript processors/01_eia-112-utility_processor.R
 Rscript processors/02_eia-112-utility-annual_processor.R
+Rscript processors/03_eia-112-build-workbook.R
 ```
 
 Each script prints sanity output. Expected values for the 2024 data:
