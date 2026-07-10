@@ -109,7 +109,7 @@
 "OR","Cascade Nat Gas Corp - OR","gas","Investor Owned",NA
 "DE","Chesapeake Utilities Corporation - DE","gas","Investor Owned",NA
 "TX","Starr County Gas System - TX","gas","Political Subdivision",NA
-"GA","Austell Nat Gas Sys - GA","gas","Investor Owned",NA
+"GA","Austell Nat Gas Sys - GA","gas","Municipal",NA
 "FL","Sunrise City of - FL","gas","Municipal",NA
 "TX","Sienergy Lp - TX","gas","Investor Owned",NA
 "VA","Roanoke Gas Company - VA","gas","Investor Owned","RGC Resources"
@@ -566,7 +566,7 @@
 "TX","Gary Natural Gas System - TX","gas","Municipal",NA
 "TN","First Utility District Tipton - TN","gas","Political Subdivision",NA
 "CO","Rangely Town of - CO","gas","Municipal",NA
-"GA","Douglas Gas Sys - GA","gas","Investor Owned",NA
+"GA","Douglas Gas Sys - GA","gas","Municipal",NA
 "MN","Hawley City of - MN","gas","Municipal",NA
 "KY","Morgantown City of - KY","gas","Municipal",NA
 "AK","Barrow Utils & Elec Coop, Inc","electric","Cooperative",NA
